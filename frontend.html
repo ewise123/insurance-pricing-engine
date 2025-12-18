@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Augmented Life Insurance Pricing Engine</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // Main App Component
+        function App() {
+            const [customers, setCustomers] = useState([]);
+            const [selectedCustomer, setSelectedCustomer] = useState(null);
+            const [scoringResult, setScoringResult] = useState(null);
+            const [isScoring, setIsScoring] = useState(false);
+            const [currentStep, setCurrentStep] = useState(0);
+            const [apiHealth, setApiHealth] = useState(null);
+
+            useEffect(() => {
+                loadCustomers();
+                checkApiHealth();
+            }, []);
+
+            const checkApiHealth = async () => {
+                try {
+                    const response = await fetch('http://localhost:8000/api/health');
+                    const data = await response.json();
+                    setApiHealth(data);
+                } catch (error) {
+                    console.error('API health check failed:', error);
+                }
+            };
+
+            const loadCustomers = async () => {
+                try {
+                    const dataUrl = new URL('new_customers.csv', window.location.href);
+                    const response = await fetch(dataUrl);
+                    const text = await response.text();
+                    const lines = text.split('\n');
+                    const headers = lines[0].split(',');
+                    
+                    const parsed = lines.slice(1, 11).map(line => {
+                        if (!line.trim()) return null;
+                        const values = line.split(',');
+                        const customer = {};
+                        headers.forEach((header, index) => {
+                            customer[header.trim()] = values[index]?.trim() || '';
+                        });
+                        return customer;
+                    }).filter(Boolean);
+                    
+                    setCustomers(parsed);
+                } catch (error) {
+                    console.error('Error loading customers:', error);
+                }
+            };
+
+            const scoreCustomer = async (customer) => {
+                setSelectedCustomer(customer);
+                setScoringResult(null);
+                setIsScoring(true);
+                setCurrentStep(0);
+
+                try {
+                    const response = await fetch('http://localhost:8000/api/score-customer', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            customer_id: customer.customer_id,
+                            age: parseFloat(customer.age),
+                            gender: customer.gender,
+                            occupation: customer.occupation,
+                            occupation_class: customer.occupation_class,
+                            height_inches: parseFloat(customer.height_inches),
+                            weight_lbs: parseFloat(customer.weight_lbs),
+                            bmi: parseFloat(customer.bmi),
+                            blood_pressure_systolic: parseInt(customer.blood_pressure_systolic),
+                            blood_pressure_diastolic: parseInt(customer.blood_pressure_diastolic),
+                            total_cholesterol: parseInt(customer.total_cholesterol),
+                            hdl_cholesterol: parseInt(customer.hdl_cholesterol),
+                            ldl_cholesterol: parseInt(customer.ldl_cholesterol),
+                            smoking_status: customer.smoking_status,
+                            alcohol_consumption: customer.alcohol_consumption,
+                            exercise_frequency: customer.exercise_frequency,
+                            chronic_conditions: customer.chronic_conditions,
+                            family_history: customer.family_history,
+                            dangerous_hobbies: customer.dangerous_hobbies,
+                            annual_income: parseInt(customer.annual_income),
+                            coverage_amount_requested: parseInt(customer.coverage_amount_requested),
+                            credit_score: parseInt(customer.credit_score),
+                            existing_coverage: parseInt(customer.existing_coverage)
+                        })
+                    });
+
+                    const result = await response.json();
+                    
+                    // Animate through steps
+                    for (let i = 0; i <= result.scoring_steps.length; i++) {
+                        setCurrentStep(i);
+                        await new Promise(resolve => setTimeout(resolve, 300));
+                    }
+                    
+                    setScoringResult(result);
+                    setIsScoring(false);
+                } catch (error) {
+                    console.error('Error scoring customer:', error);
+                    setIsScoring(false);
+                }
+            };
+
+            return (
+                <div className="min-h-screen p-8">
+                    <div className="max-w-7xl mx-auto">
+                        {/* Header */}
+                        <div className="mb-8 rounded-lg px-6 py-3" style={{ backgroundColor: '#46199B' }}>
+                            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                                <div className="flex items-center gap-4">
+                                    <img src="logo.svg" alt="Protective Life logo" className="w-24 h-24" />
+                                    <h1 className="text-4xl font-bold text-white">
+                                        Dynamic Pricing Engine
+                                    </h1>
+                                </div>
+                                <div className="flex flex-col items-start gap-1 text-purple-100 lg:items-end lg:text-right">
+                                    <div className="text-sm font-medium">Life Insurance Risk Assessment & pricing</div>
+                                    {apiHealth && (
+                                        <>
+                                            <div className="text-xs text-green-200 flex items-center gap-2 lg:justify-end">
+                                                <span className="inline-block w-2 h-2 rounded-full bg-green-200" />
+                                                <span>
+                                                    System Online | {apiHealth.historical_records.toLocaleString()} historical records loaded
+                                                </span>
+                                            </div>
+                                            {apiHealth.ai_enabled && (
+                                                <div className="text-xs text-purple-200 flex items-center gap-1 lg:justify-end">
+                                                    <svg className="w-4 h-4 text-purple-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                    </svg>
+                                                    AI Pattern Analysis Active ({apiHealth.ai_model})
+                                                </div>
+                                            )}
+                                        </>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-12 gap-6">
+                            {/* Customer List */}
+                            <div className="col-span-3">
+                                <div className="bg-white rounded-lg shadow p-4">
+                                    <h2 className="text-lg font-semibold mb-4">New Customers</h2>
+                                    <div className="space-y-2">
+                                        {customers.map(customer => (
+                                            <button
+                                                key={customer.customer_id}
+                                                onClick={() => scoreCustomer(customer)}
+                                                className={`w-full text-left p-3 rounded border transition-colors ${
+                                                    selectedCustomer?.customer_id === customer.customer_id
+                                                        ? 'border-blue-500 bg-blue-50'
+                                                        : 'border-gray-200 hover:border-blue-300'
+                                                }`}
+                                            >
+                                                <div className="font-medium text-sm">{customer.customer_id}</div>
+                                                <div className="text-xs text-gray-600">
+                                                    Age {Math.round(customer.age)} | {customer.gender}
+                                                </div>
+                                                <div className="text-xs text-gray-500 mt-1">
+                                                    {customer.occupation}
+                                                </div>
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Main Scoring Area */}
+                            <div className="col-span-9">
+                                {!selectedCustomer ? (
+                                    <div className="bg-white rounded-lg shadow p-12 text-center">
+                                        <div className="text-gray-400 text-lg">
+                                            Select a customer from the list to begin risk assessment
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="space-y-6">
+                                        {/* Customer Header */}
+                                        <CustomerHeader customer={selectedCustomer} />
+
+                                        {/* Scoring Progress */}
+                                        {(isScoring || scoringResult) && (
+                                            <ScoringDisplay
+                                                result={scoringResult}
+                                                currentStep={currentStep}
+                                                isScoring={isScoring}
+                                            />
+                                        )}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        // Customer Header Component
+        function CustomerHeader({ customer }) {
+            return (
+                <div className="bg-white rounded-lg shadow p-6">
+                    <div className="flex justify-between items-start">
+                        <div>
+                            <h2 className="text-2xl font-bold text-gray-900">{customer.customer_id}</h2>
+                            <div className="mt-2 grid grid-cols-4 gap-4 text-sm">
+                                <div>
+                                    <span className="text-gray-500">Age:</span>
+                                    <span className="ml-2 font-medium">{Math.round(customer.age)}</span>
+                                </div>
+                                <div>
+                                    <span className="text-gray-500">Gender:</span>
+                                    <span className="ml-2 font-medium">{customer.gender}</span>
+                                </div>
+                                <div>
+                                    <span className="text-gray-500">BMI:</span>
+                                    <span className="ml-2 font-medium">{parseFloat(customer.bmi).toFixed(1)}</span>
+                                </div>
+                                <div>
+                                    <span className="text-gray-500">Smoking:</span>
+                                    <span className="ml-2 font-medium">{customer.smoking_status}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="text-right">
+                            <div className="text-sm text-gray-500">Coverage Requested</div>
+                            <div className="text-2xl font-bold text-blue-600">
+                                ${parseInt(customer.coverage_amount_requested).toLocaleString()}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        // Scoring Display Component
+        function ScoringDisplay({ result, currentStep, isScoring }) {
+            const [expandedStep, setExpandedStep] = useState(null);
+
+            if (!result && !isScoring) return null;
+
+            const steps = result?.scoring_steps || [];
+            const totalSteps = steps.length || 12;
+            const visibleSteps = steps.slice(0, currentStep);
+
+            return (
+                <div className="space-y-4">
+                    {/* Live Progress */}
+                    {isScoring && (
+                        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <div className="flex items-center space-x-3">
+                                <div className="animate-spin h-5 w-5 border-2 border-blue-600 border-t-transparent rounded-full"></div>
+                                <div className="text-blue-900 font-medium">
+                                    Analyzing risk factors... ({currentStep}/{totalSteps})
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Risk Score Progress */}
+                    {visibleSteps.length > 0 && (
+                        <div className="bg-white rounded-lg shadow p-6">
+                            <div className="flex justify-between items-center mb-4">
+                                <h3 className="text-lg font-semibold">Risk Score Calculation</h3>
+                                <div className="text-right">
+                                    <div className="text-sm text-gray-500">Current Score</div>
+                                    <div className="text-3xl font-bold text-gray-900">
+                                        {(visibleSteps.reduce((sum, step) => sum + step.weighted_score, 0)).toFixed(2)}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="w-full bg-gray-200 rounded-full h-3">
+                                <div
+                                    className="bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 h-3 rounded-full transition-all duration-500"
+                                    style={{
+                                        width: `${Math.min(100, visibleSteps.reduce((sum, step) => sum + step.weighted_score, 0) * 100)}%`
+                                    }}
+                                />
+                            </div>
+                            <div className="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>0.0 (Low Risk)</span>
+                                <span>0.5 (Medium)</span>
+                                <span>1.0 (High Risk)</span>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Scoring Steps */}
+                    <div className="bg-white rounded-lg shadow overflow-hidden">
+                        <div className="bg-gray-50 px-6 py-3 border-b border-gray-200">
+                            <h3 className="font-semibold text-gray-900">Risk Factor Analysis</h3>
+                        </div>
+                        <div className="divide-y divide-gray-200">
+                            {visibleSteps.map((step, index) => (
+                                <StepCard
+                                    key={index}
+                                    step={step}
+                                    index={index}
+                                    isExpanded={expandedStep === index}
+                                    onToggle={() => setExpandedStep(expandedStep === index ? null : index)}
+                                />
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Final Results */}
+                    {result && !isScoring && (
+                        <FinalResults result={result} />
+                    )}
+                </div>
+            );
+        }
+
+        // Step Card Component
+        function StepCard({ step, index, isExpanded, onToggle }) {
+            const getRiskColor = (score) => {
+                if (score < 0.01) return 'text-green-600 bg-green-50';
+                if (score < 0.02) return 'text-yellow-600 bg-yellow-50';
+                return 'text-red-600 bg-red-50';
+            };
+
+            return (
+                <div className="p-4 hover:bg-gray-50 transition-colors">
+                    <div
+                        className="flex items-center justify-between cursor-pointer"
+                        onClick={onToggle}
+                    >
+                        <div className="flex-1">
+                            <div className="flex items-center space-x-3">
+                                <div className={`px-3 py-1 rounded-full text-sm font-medium ${getRiskColor(step.weighted_score)}`}>
+                                    +{step.weighted_score.toFixed(2)}
+                                </div>
+                                <div>
+                                    <div className="font-medium text-gray-900">{step.factor}</div>
+                                    <div className="text-sm text-gray-600">{step.category}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex items-center space-x-4">
+                            <div className="text-right">
+                                <div className="text-sm font-medium text-gray-900">{step.value}</div>
+                                <div className="text-xs text-gray-500">
+                                    {(step.weight * 100).toFixed(0)}% of total score
+                                </div>
+                            </div>
+                            <svg
+                                className={`w-5 h-5 text-gray-400 transform transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    {isExpanded && (
+                        <div className="mt-4 pt-4 border-t border-gray-200">
+                            <div className="bg-blue-50 border border-blue-100 rounded p-4 mb-4">
+                                <div className="text-sm text-gray-700 leading-relaxed">
+                                    {step.explanation}
+                                </div>
+                            </div>
+                            {step.supporting_data && Object.keys(step.supporting_data).length > 0 && (
+                                <div className="grid grid-cols-3 gap-4">
+                                    {Object.entries(step.supporting_data).map(([key, value]) => (
+                                        <div key={key} className="bg-gray-50 rounded p-3">
+                                            <div className="text-xs text-gray-500 uppercase tracking-wide">
+                                                {key.replace(/_/g, ' ')}
+                                            </div>
+                                            <div className="text-lg font-semibold text-gray-900 mt-1">
+                                                {(() => {
+                                                    if (typeof value !== 'number') return value;
+                                                    if (/risk_score|avg_risk/i.test(key)) return value.toFixed(2);
+                                                    return value.toLocaleString();
+                                                })()}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                            <div className="mt-4 grid grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <span className="text-gray-500">Base Risk Contribution:</span>
+                                    <span className="ml-2 font-medium">{step.risk_contribution.toFixed(2)}</span>
+                                </div>
+                                <div>
+                                    <span className="text-gray-500">Weighted Impact:</span>
+                                    <span className="ml-2 font-medium">{step.weighted_score.toFixed(2)}</span>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        // Final Results Component
+        function FinalResults({ result }) {
+            const [editedPrice, setEditedPrice] = useState(result.annual_premium_recommended);
+            const [isEditing, setIsEditing] = useState(false);
+
+            const getRiskTier = (score) => {
+                if (score < 0.25) return { label: 'Very Low Risk', color: 'green' };
+                if (score < 0.35) return { label: 'Low Risk', color: 'blue' };
+                if (score < 0.50) return { label: 'Average Risk', color: 'yellow' };
+                if (score < 0.65) return { label: 'Elevated Risk', color: 'orange' };
+                return { label: 'High Risk', color: 'red' };
+            };
+
+            const tier = getRiskTier(result.final_risk_score);
+            const confidenceLevel = (result.confidence_level || '').toLowerCase();
+            const confidencePillClass =
+                confidenceLevel === 'high'
+                    ? 'bg-green-100 text-green-800'
+                    : confidenceLevel === 'medium'
+                        ? 'bg-yellow-100 text-yellow-800'
+                        : 'bg-gray-100 text-gray-800';
+            const predictedDuration = result.predicted_policy_duration_years ?? null;
+            const attritionRaw = result.attrition_likelihood ?? null;
+            const attritionPct = attritionRaw === null ? null : (attritionRaw <= 1 ? attritionRaw * 100 : attritionRaw);
+
+            return (
+                <div className="space-y-6">
+                    {/* Final Risk Score */}
+                    <div className={`bg-${tier.color}-50 border-2 border-${tier.color}-200 rounded-lg p-6`}>
+                        <div className="flex justify-between items-start">
+                            <div>
+                                <h3 className="text-xl font-bold text-gray-900 mb-2">Final Risk Assessment</h3>
+                                <div className={`inline-block px-4 py-2 rounded-full bg-${tier.color}-100 text-${tier.color}-800 font-semibold`}>
+                                    {tier.label}
+                                </div>
+                            </div>
+                            <div className="text-right">
+                                <div className={`inline-flex px-3 py-1 rounded-full text-sm font-semibold ${confidencePillClass}`}>
+                                    {confidenceLevel ? `${confidenceLevel.toUpperCase()} CONFIDENCE` : 'CONFIDENCE'}
+                                </div>
+                                <div className="mt-3 text-sm text-gray-600 mb-1">Final Risk Score</div>
+                                <div className="text-5xl font-bold text-gray-900">{result.final_risk_score.toFixed(2)}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {/* Policy Outlook */}
+                    <div className="bg-white rounded-lg shadow p-6">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4">Policy Outlook</h3>
+                        <div className="grid grid-cols-2 gap-6">
+                            <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                                <div className="text-sm text-gray-500 mb-1">Predicted Policy Duration</div>
+                                <div className="text-3xl font-bold text-gray-900">
+                                    {predictedDuration !== null ? predictedDuration.toFixed(1) : '—'}
+                                    <span className="text-base font-medium text-gray-500 ml-2">years</span>
+                                </div>
+                                <div className="text-xs text-gray-500 mt-1">Estimated based on cohort outcomes</div>
+                            </div>
+                            <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                                <div className="text-sm text-gray-500 mb-1">Attrition Likelihood</div>
+                                <div className="text-3xl font-bold text-gray-900">
+                                    {attritionPct !== null ? `${attritionPct.toFixed(1)}%` : '—'}
+                                </div>
+                                <div className="text-xs text-gray-500 mt-1">Estimated lifetime lapse probability</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* AI Pattern Analysis */}
+                    {result.ai_pattern_analysis && (
+                        <div className="bg-gradient-to-r from-purple-50 to-blue-50 border-2 border-purple-200 rounded-lg p-6">
+                            <div className="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 className="text-xl font-bold text-gray-900 flex items-center">
+                                        <svg className="w-6 h-6 mr-2 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                        </svg>
+                                        AI Pattern Analysis
+                                    </h3>
+                                    <div className="text-xs text-purple-600 font-medium mt-1">
+                                        Powered by Claude AI
+                                    </div>
+                                </div>
+                                <div className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                                    result.ai_pattern_analysis.confidence === 'high' ? 'bg-green-100 text-green-800' :
+                                    result.ai_pattern_analysis.confidence === 'medium' ? 'bg-yellow-100 text-yellow-800' :
+                                    'bg-gray-100 text-gray-800'
+                                }`}>
+                                    {result.ai_pattern_analysis.confidence.toUpperCase()} CONFIDENCE
+                                </div>
+                            </div>
+
+                            {/* Pattern Description */}
+                            <div className="bg-white rounded-lg p-4 mb-4 border border-purple-100">
+                                <div className="text-sm font-semibold text-purple-600 mb-2">DISCOVERED PATTERN:</div>
+                                <div className="text-gray-800 leading-relaxed">
+                                    {result.ai_pattern_analysis.pattern}
+                                </div>
+                            </div>
+
+                            {/* Metrics Grid */}
+                            <div className="flex items-center justify-between mb-2">
+                                <div className="text-sm font-semibold text-purple-600">PATTERN METRICS</div>
+                                <div className="relative inline-flex items-center group">
+                                    <img src="question_mark.svg" alt="Info" className="w-6 h-6 contrast-125 brightness-75 cursor-help" />
+                                    <div className="absolute right-0 mt-2 w-72 rounded-lg border border-gray-200 bg-white p-3 text-xs text-gray-700 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                        <div className="font-semibold text-gray-900 mb-1">How these are calculated</div>
+                                        <div>Sample Size: number of customers in Claude's matched pattern cohort.</div>
+                                        <div>Claim Rate: claims in that cohort divided by sample size.</div>
+                                        <div>Baseline: average claim rate across the full historical dataset.</div>
+                                        <div>Vs Baseline: cohort claim rate divided by baseline (multiplier).</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-4 gap-4 mb-4">
+                                <div className="bg-white rounded-lg p-3 border border-purple-100">
+                                    <div className="text-xs text-gray-500 uppercase">Sample Size</div>
+                                    <div className="text-2xl font-bold text-gray-900 mt-1">
+                                        {result.ai_pattern_analysis.metrics.cohort_size}
+                                    </div>
+                                    <div className="text-xs text-gray-500 mt-1">
+                                        {result.ai_pattern_analysis.metrics.cohort_claims_count} claims observed
+                                    </div>
+                                </div>
+                                <div className="bg-white rounded-lg p-3 border border-purple-100">
+                                    <div className="text-xs text-gray-500 uppercase">Claim Rate</div>
+                                    <div className="text-2xl font-bold text-gray-900 mt-1">
+                                        {result.ai_pattern_analysis.metrics.claim_rate_percentage}%
+                                    </div>
+                                </div>
+                                <div className="bg-white rounded-lg p-3 border border-purple-100">
+                                    <div className="text-xs text-gray-500 uppercase">Baseline</div>
+                                    <div className="text-2xl font-bold text-gray-900 mt-1">
+                                        {result.ai_pattern_analysis.metrics.baseline_percentage}%
+                                    </div>
+                                </div>
+                                <div className={`bg-white rounded-lg p-3 border-2 ${
+                                    result.ai_pattern_analysis.metrics.vs_baseline_multiplier_value > 1
+                                        ? 'border-red-300'
+                                        : 'border-green-300'
+                                }`}>
+                                    <div className="text-xs text-gray-500 uppercase">vs Baseline</div>
+                                    <div className={`text-2xl font-bold mt-1 ${
+                                        result.ai_pattern_analysis.metrics.vs_baseline_multiplier_value > 1
+                                            ? 'text-red-600'
+                                            : 'text-green-600'
+                                    }`}>
+                                        {result.ai_pattern_analysis.metrics.vs_baseline_multiplier}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Key Factors */}
+                        <div className="bg-white rounded-lg p-4 mb-4 border border-purple-100">
+                            <div className="text-sm font-semibold text-purple-600 mb-2">KEY CONTRIBUTING FACTORS:</div>
+                            <div className="flex flex-wrap gap-2">
+                                    {(() => {
+                                        const factors = result.ai_pattern_analysis.key_factors_detailed
+                                            || (result.ai_pattern_analysis.key_factors || []).map(f => ({ text: f, sentiment: 'neutral' }));
+                                        const pillClass = (sentiment) => {
+                                            if (sentiment === 'positive') return 'bg-green-100 text-green-800 border border-green-200';
+                                            if (sentiment === 'negative') return 'bg-red-100 text-red-800 border border-red-200';
+                                            return 'bg-gray-100 text-gray-700 border border-gray-200';
+                                        };
+                                        return factors.map((factor, idx) => (
+                                            <div key={idx} className={`px-3 py-1 rounded-full text-sm font-medium ${pillClass(factor.sentiment)}`}>
+                                                {factor.text}
+                                            </div>
+                                        ));
+                                    })()}
+                            </div>
+                        </div>
+
+                            {/* Recommendation */}
+                            <div className="bg-purple-100 rounded-lg p-4 border-l-4 border-purple-600 mb-4">
+                                <div className="text-sm font-semibold text-purple-900 mb-2">
+                                    ⚡ AI RECOMMENDATION:
+                                </div>
+                                <div className="text-purple-900">
+                                    {result.ai_pattern_analysis.recommendation}
+                                </div>
+                            </div>
+
+                            {/* Statistical Note */}
+                            <div className="text-xs text-gray-600 italic">
+                                {result.ai_pattern_analysis.statistical_note}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Pricing Recommendation */}
+                    <div className="bg-white rounded-lg shadow p-6">
+                        <h3 className="text-xl font-bold text-gray-900 mb-4">Pricing Recommendation</h3>
+                        
+                        <div className="space-y-4">
+                            {/* Price Range Visualization */}
+                            <div className="relative pt-2 pb-6">
+                                {(() => {
+                                    const calculatedPrice = result.annual_premium_calculated ?? result.annual_premium_recommended ?? 0;
+                                    const recommendedPrice = result.annual_premium_recommended ?? calculatedPrice;
+                                    const low = result.annual_premium_low ?? Math.min(calculatedPrice, recommendedPrice);
+                                    const high = result.annual_premium_high ?? Math.max(calculatedPrice, recommendedPrice);
+                                    const barGap = 16;
+                                    const positionFor = (value) => {
+                                        if (high === low) return 50;
+                                        const ratio = (value - low) / (high - low);
+                                        const clamped = Math.max(0, Math.min(1, ratio));
+                                        // keep dots away from hard edges to avoid clipping
+                                        return 5 + clamped * 90;
+                                    };
+                                    const translateFor = (pos) => {
+                                        if (pos <= 10) return 'translateX(0%)';
+                                        if (pos >= 90) return 'translateX(-100%)';
+                                        return 'translateX(-50%)';
+                                    };
+                                    const verticalStyleFor = (row) =>
+                                        row === 'top'
+                                            ? { bottom: `calc(50% + ${barGap}px)` }
+                                            : { top: `calc(50% + ${barGap}px)` };
+                                    const points = [
+                                        {
+                                            label: 'Low Boundary',
+                                            value: low,
+                                            color: 'bg-green-500',
+                                            textColor: 'text-green-700',
+                                            size: 'w-3 h-3',
+                                            note: 'Break-even',
+                                            position: 0,
+                                            row: 'bottom'
+                                        },
+                                        {
+                                            label: 'Calculated Price',
+                                            value: calculatedPrice,
+                                            color: 'bg-blue-600',
+                                            textColor: 'text-blue-700',
+                                            size: 'w-4 h-4',
+                                            note: 'Pure math',
+                                            position: positionFor(calculatedPrice),
+                                            row: 'bottom'
+                                        },
+                                        {
+                                            label: 'Recommended (AI)',
+                                            value: recommendedPrice,
+                                            color: 'bg-purple-600',
+                                            textColor: 'text-purple-700',
+                                            size: 'w-4 h-4',
+                                            note: 'AI-influenced',
+                                            position: positionFor(recommendedPrice),
+                                            row: 'top'
+                                        },
+                                        {
+                                            label: 'High Boundary',
+                                            value: high,
+                                            color: 'bg-red-500',
+                                            textColor: 'text-red-700',
+                                            size: 'w-3 h-3',
+                                            note: 'Max competitive',
+                                            position: 100,
+                                            row: 'bottom'
+                                        }
+                                    ];
+                                    
+                                    return (
+                                        <div className="relative h-64">
+                                            <div className="absolute left-0 right-0 top-1/2 h-2 -translate-y-1/2 bg-gradient-to-r from-green-200 via-blue-200 to-red-200 rounded-full"></div>
+                                            {points.map((point, idx) => (
+                                                <div
+                                                    key={idx}
+                                                    className="absolute text-center w-28 px-1"
+                                                    style={{
+                                                        left: `${point.position}%`,
+                                                        transform: translateFor(point.position),
+                                                        ...verticalStyleFor(point.row)
+                                                    }}
+                                                >
+                                                    {point.row === 'top' ? (
+                                                        <>
+                                                            <div className="text-xs text-gray-500">{point.label}</div>
+                                                            <div className={`font-bold ${point.textColor}`}>
+                                                                ${point.value.toLocaleString()}
+                                                            </div>
+                                                            <div className="text-xs text-gray-500 mt-1">{point.note}</div>
+                                                            <div className="mx-auto mt-2">
+                                                                <div className={`${point.size} ${point.color} rounded-full mx-auto`}></div>
+                                                            </div>
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <div className="mx-auto mb-2">
+                                                                <div className={`${point.size} ${point.color} rounded-full mx-auto`}></div>
+                                                            </div>
+                                                            <div className="text-xs text-gray-500">{point.label}</div>
+                                                            <div className={`font-bold ${point.textColor}`}>
+                                                                ${point.value.toLocaleString()}
+                                                            </div>
+                                                            <div className="text-xs text-gray-500 mt-1">{point.note}</div>
+                                                        </>
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    );
+                                })()}
+                            </div>
+
+                            {/* Underwriter Override */}
+                            <div className="mt-8 pt-6 border-t border-gray-200">
+                                <div className="flex items-center justify-between">
+                                    <div>
+                                        <h4 className="font-semibold text-gray-900">Underwriter Final Price</h4>
+                                        <p className="text-sm text-gray-600 mt-1">
+                                            Review and adjust the recommended pricing if needed
+                                        </p>
+                                    </div>
+                                    {!isEditing ? (
+                                        <div className="flex items-center space-x-4">
+                                            <div className="text-2xl font-bold text-gray-900">
+                                                ${editedPrice.toLocaleString()}
+                                            </div>
+                                            <button
+                                                onClick={() => setIsEditing(true)}
+                                                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                                            >
+                                                Adjust Price
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        <div className="flex items-center space-x-4">
+                                            <input
+                                                type="number"
+                                                value={editedPrice}
+                                                onChange={(e) => setEditedPrice(parseFloat(e.target.value))}
+                                                className="w-32 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500"
+                                            />
+                                            <button
+                                                onClick={() => setIsEditing(false)}
+                                                className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
+                                            >
+                                                Confirm
+                                            </button>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Executive Summary */}
+                    <div className="bg-white rounded-lg shadow p-6">
+                        <h3 className="text-xl font-bold text-gray-900 mb-4">Executive Summary</h3>
+                        <div className="bg-gray-50 p-4 rounded border border-gray-200">
+                            {(() => {
+                                const lines = (result.summary || '').split('\n');
+                                const blocks = [];
+                                let listItems = null;
+                                let ordered = false;
+                                let paragraph = null;
+                                const pushList = () => {
+                                    if (listItems && listItems.length) {
+                                        blocks.push({ type: ordered ? 'ol' : 'ul', items: listItems });
+                                    }
+                                    listItems = null;
+                                    ordered = false;
+                                };
+                                const pushParagraph = () => {
+                                    if (paragraph && paragraph.length) {
+                                        blocks.push({ type: 'p', text: paragraph.join(' ') });
+                                    }
+                                    paragraph = null;
+                                };
+                                lines.forEach((rawLine) => {
+                                    const line = rawLine.trim();
+                                    if (!line) {
+                                        pushParagraph();
+                                        pushList();
+                                        return;
+                                    }
+                                    if (/^=+$/.test(line)) {
+                                        return;
+                                    }
+                                    if (/^\d+\./.test(line)) {
+                                        pushParagraph();
+                                        if (!listItems || !ordered) {
+                                            pushList();
+                                            listItems = [];
+                                            ordered = true;
+                                        }
+                                        listItems.push(line.replace(/^\d+\.\s*/, ''));
+                                        return;
+                                    }
+                                    if (/^\u2022/.test(line)) {
+                                        pushParagraph();
+                                        if (!listItems || ordered) {
+                                            pushList();
+                                            listItems = [];
+                                            ordered = false;
+                                        }
+                                        listItems.push(line.replace(/^\u2022\s*/, ''));
+                                        return;
+                                    }
+                                    pushList();
+                                    if (/^[A-Z][A-Z\s]+:$/.test(line)) {
+                                        pushParagraph();
+                                        blocks.push({ type: 'heading', text: line.replace(/:$/, '') });
+                                        return;
+                                    }
+                                    if (!paragraph) {
+                                        paragraph = [];
+                                    }
+                                    paragraph.push(line);
+                                });
+                                pushParagraph();
+                                pushList();
+
+                                return (
+                                    <div className="space-y-3">
+                                        {blocks.map((block, idx) => {
+                                            if (block.type === 'heading') {
+                                                return (
+                                                    <div key={idx} className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                                                        {block.text}
+                                                    </div>
+                                                );
+                                            }
+                                            if (block.type === 'ul') {
+                                                return (
+                                                    <ul key={idx} className="list-disc pl-5 space-y-1 text-sm text-gray-700">
+                                                        {block.items.map((item, itemIdx) => (
+                                                            <li key={itemIdx}>{item}</li>
+                                                        ))}
+                                                    </ul>
+                                                );
+                                            }
+                                            if (block.type === 'ol') {
+                                                return (
+                                                    <ol key={idx} className="list-decimal pl-5 space-y-1 text-sm text-gray-700">
+                                                        {block.items.map((item, itemIdx) => (
+                                                            <li key={itemIdx}>{item}</li>
+                                                        ))}
+                                                    </ol>
+                                                );
+                                            }
+                                            return (
+                                                <p key={idx} className="text-sm text-gray-700">
+                                                    {block.text}
+                                                </p>
+                                            );
+                                        })}
+                                    </div>
+                                );
+                            })()}
+                        </div>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex space-x-4">
+                        <button className="flex-1 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-semibold">
+                            Approve & Issue Policy
+                        </button>
+                        <button className="flex-1 px-6 py-3 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors font-semibold">
+                            Request Additional Information
+                        </button>
+                        <button className="flex-1 px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-semibold">
+                            Decline Application
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+
+        // Render the app
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

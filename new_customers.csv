@@ -1,0 +1,501 @@
+customer_id,age,gender,occupation,occupation_class,height_inches,weight_lbs,bmi,blood_pressure_systolic,blood_pressure_diastolic,total_cholesterol,hdl_cholesterol,ldl_cholesterol,smoking_status,alcohol_consumption,exercise_frequency,chronic_conditions,family_history,dangerous_hobbies,annual_income,coverage_amount_requested,credit_score,existing_coverage
+NEW-0001,57.4,Female,Designer,Class I (Low Risk),60.5,148.1,28.4,125,70,204,52,132,Former (<5 years),Heavy (>7/week),Active (5+/week),Arthritis,None,Skydiving,104593,1450000,752,0
+NEW-0002,58.6,Male,Police Officer,Class IV (Very High Risk),66.6,189.2,30.0,129,66,208,41,147,Former (<5 years),Light (1-2/week),Sedentary,Hypertension,None,None,111362,1400000,675,0
+NEW-0003,25.8,Female,Mechanic,Class II (Moderate Risk),53.1,83.7,20.9,113,74,128,67,41,Never,Light (1-2/week),Light (1-2/week),None,Stroke,None,34292,450000,596,0
+NEW-0004,45.1,Female,Accountant,Class I (Low Risk),64.0,99.0,17.0,123,72,189,64,105,Current,Light (1-2/week),Sedentary,None,None,Skiing,102032,1000000,612,0
+NEW-0005,50.4,Female,Accountant,Class I (Low Risk),64.1,146.5,25.0,130,70,182,43,118,Former (>5 years),Moderate (3-7/week),Moderate (3-4/week),High Cholesterol,None,None,115677,1700000,748,400000
+NEW-0006,31.8,Female,Designer,Class I (Low Risk),67.0,160.5,25.1,99,71,176,54,102,Never,Light (1-2/week),Moderate (3-4/week),None,Heart Disease,None,108480,1550000,685,350000
+NEW-0007,33.9,Female,Factory Worker,Class III (High Risk),65.9,116.9,18.9,103,66,188,43,125,Never,Light (1-2/week),Sedentary,None,None,None,40168,500000,665,0
+NEW-0008,33.7,Male,Plumber,Class II (Moderate Risk),67.1,136.5,21.3,127,68,164,48,95,Never,Light (1-2/week),Active (5+/week),Hypertension,None,None,88996,950000,639,450000
+NEW-0009,42.3,Female,Teacher,Class I (Low Risk),65.5,163.0,26.7,109,68,166,48,97,Never,Moderate (3-7/week),Active (5+/week),None,Heart Disease; Cancer,None,118671,1100000,720,0
+NEW-0010,52.1,Male,Factory Worker,Class III (High Risk),62.8,146.1,26.1,121,79,182,46,116,Never,None,Active (5+/week),None,None,None,89542,800000,727,0
+NEW-0011,57.8,Female,Designer,Class I (Low Risk),67.9,206.0,31.4,150,76,200,44,137,Current,Light (1-2/week),Light (1-2/week),High Cholesterol; Arthritis; Diabetes Type 2,Alzheimer's,None,148551,2000000,713,0
+NEW-0012,34.1,Female,Chef,Class II (Moderate Risk),65.6,104.0,17.0,100,65,179,56,103,Never,Light (1-2/week),Sedentary,None,None,None,54675,800000,657,400000
+NEW-0013,54.9,Female,Truck Driver,Class III (High Risk),57.8,150.4,31.7,130,68,198,38,140,Never,Heavy (>7/week),Sedentary,None,Diabetes,None,128104,1400000,652,0
+NEW-0014,27.0,Male,Warehouse Worker,Class III (High Risk),66.2,106.0,17.0,108,75,159,62,77,Former (>5 years),Light (1-2/week),Moderate (3-4/week),None,Cancer; Heart Disease,None,30000,350000,557,0
+NEW-0015,41.5,Female,Logger,Class IV (Very High Risk),67.2,187.1,29.2,124,77,176,47,109,Never,Moderate (3-7/week),Sedentary,Hypertension,None,None,43985,400000,679,0
+NEW-0016,38.1,Female,Designer,Class I (Low Risk),60.0,129.2,25.2,133,65,145,52,74,Former (>5 years),Light (1-2/week),Sedentary,None,None,None,94762,1250000,677,450000
+NEW-0017,54.3,Male,Factory Worker,Class III (High Risk),67.2,158.2,24.6,134,60,173,48,105,Former (>5 years),Light (1-2/week),Sedentary,None,None,None,82015,900000,624,0
+NEW-0018,56.7,Male,Electrician,Class II (Moderate Risk),63.4,97.1,17.0,132,72,178,64,94,Former (<5 years),Light (1-2/week),Moderate (3-4/week),None,None,None,104961,1250000,742,300000
+NEW-0019,35.8,Male,Software Engineer,Class I (Low Risk),72.2,197.7,26.7,113,62,185,43,122,Never,Light (1-2/week),Active (5+/week),None,None,None,83477,700000,697,0
+NEW-0020,47.2,Female,Analyst,Class I (Low Risk),70.3,151.1,21.5,125,64,177,62,95,Former (>5 years),Moderate (3-7/week),Active (5+/week),None,None,None,98375,1450000,639,0
+NEW-0021,39.4,Male,Nurse,Class II (Moderate Risk),65.4,117.8,19.4,130,63,187,65,101,Former (<5 years),Light (1-2/week),Sedentary,None,None,None,84192,800000,597,250000
+NEW-0022,40.8,Female,Manager,Class I (Low Risk),66.1,131.4,21.2,132,60,191,52,119,Former (<5 years),Light (1-2/week),Moderate (3-4/week),None,Cancer,None,112372,1050000,679,150000
+NEW-0023,34.9,Male,Sales Rep,Class II (Moderate Risk),69.5,116.7,17.0,108,60,171,32,118,Never,Heavy (>7/week),Active (5+/week),None,None,None,63208,750000,646,0
+NEW-0024,35.5,Female,Warehouse Worker,Class III (High Risk),63.1,130.0,23.0,126,60,173,61,92,Never,Light (1-2/week),Light (1-2/week),None,Cancer,None,60320,850000,622,0
+NEW-0025,51.9,Male,Electrician,Class II (Moderate Risk),66.8,189.0,29.8,121,67,210,59,131,Never,Heavy (>7/week),Moderate (3-4/week),Hypertension; Arthritis,None,None,101304,1150000,667,250000
+NEW-0026,40.1,Female,Designer,Class I (Low Risk),64.0,111.2,19.1,107,77,167,53,94,Current,Light (1-2/week),Light (1-2/week),None,Heart Disease; Cancer,Skydiving,86470,700000,665,0
+NEW-0027,70.3,Male,Chef,Class II (Moderate Risk),70.5,161.0,22.8,146,67,189,51,117,Never,Light (1-2/week),Light (1-2/week),Hypertension,None,None,112974,1450000,779,450000
+NEW-0028,38.0,Female,Truck Driver,Class III (High Risk),57.7,93.9,19.8,117,60,175,49,107,Never,Moderate (3-7/week),Sedentary,None,Cancer,Scuba Diving,72827,750000,661,0
+NEW-0029,46.0,Male,Teacher,Class I (Low Risk),62.4,106.4,19.2,113,65,206,61,125,Former (>5 years),Moderate (3-7/week),Moderate (3-4/week),None,None,None,101180,1300000,732,350000
+NEW-0030,43.9,Female,Factory Worker,Class III (High Risk),65.3,183.8,30.3,133,74,207,52,136,Never,Heavy (>7/week),Sedentary,None,None,Rock Climbing,68459,650000,589,0
+NEW-0031,36.5,Male,Analyst,Class I (Low Risk),66.9,157.9,24.8,114,86,195,58,117,Former (>5 years),Light (1-2/week),Light (1-2/week),None,None,None,66312,900000,634,0
+NEW-0032,51.1,Male,Plumber,Class II (Moderate Risk),66.7,156.0,24.6,124,64,165,77,68,Former (>5 years),Light (1-2/week),Light (1-2/week),Diabetes Type 2,Cancer,None,77220,850000,652,150000
+NEW-0033,48.0,Male,Factory Worker,Class III (High Risk),60.8,162.8,30.9,140,60,194,62,112,Former (>5 years),None,Light (1-2/week),Hypertension,None,None,75747,900000,704,0
+NEW-0034,63.3,Male,Teacher,Class I (Low Risk),64.5,170.9,28.9,123,70,210,55,135,Former (<5 years),Light (1-2/week),Light (1-2/week),None,None,None,128912,1550000,745,350000
+NEW-0035,27.4,Male,Factory Worker,Class III (High Risk),64.4,152.6,25.9,106,68,206,54,132,Former (>5 years),Light (1-2/week),Light (1-2/week),Hypertension,Heart Disease,None,54918,650000,558,0
+NEW-0036,37.9,Female,Mechanic,Class II (Moderate Risk),64.7,113.4,19.1,110,66,172,55,97,Former (>5 years),Moderate (3-7/week),Sedentary,None,None,None,38365,400000,599,0
+NEW-0037,28.2,Female,Accountant,Class I (Low Risk),63.8,124.8,21.6,110,60,132,71,41,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,71645,700000,610,0
+NEW-0038,44.2,Female,Sales Rep,Class II (Moderate Risk),60.0,149.8,29.3,118,70,204,60,124,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,78031,700000,616,0
+NEW-0039,52.2,Female,Designer,Class I (Low Risk),66.6,189.1,30.0,136,89,205,54,130,Former (>5 years),Moderate (3-7/week),Active (5+/week),None,None,None,137807,1950000,768,0
+NEW-0040,61.7,Female,Plumber,Class II (Moderate Risk),63.8,172.3,29.8,145,75,192,43,129,Never,Moderate (3-7/week),Moderate (3-4/week),None,Stroke,None,118979,950000,748,0
+NEW-0041,39.5,Female,Software Engineer,Class I (Low Risk),61.7,115.7,21.4,118,73,182,57,105,Current,Light (1-2/week),Light (1-2/week),None,None,None,114852,1300000,775,0
+NEW-0042,45.1,Female,Sales Rep,Class II (Moderate Risk),68.8,145.0,21.5,131,61,172,56,96,Current,None,Active (5+/week),None,Heart Disease,None,51444,550000,573,0
+NEW-0043,34.8,Female,Analyst,Class I (Low Risk),68.0,143.0,21.8,124,60,179,61,98,Never,Light (1-2/week),Active (5+/week),None,Alzheimer's,None,70185,600000,709,500000
+NEW-0044,29.9,Male,Designer,Class I (Low Risk),66.3,198.7,31.8,111,64,191,38,132,Former (<5 years),Moderate (3-7/week),Moderate (3-4/week),None,None,Motorcycle Racing,82589,1150000,560,300000
+NEW-0045,45.0,Male,Chef,Class II (Moderate Risk),71.3,194.1,26.8,124,67,188,51,117,Never,Light (1-2/week),Light (1-2/week),None,None,None,85992,800000,689,250000
+NEW-0046,46.7,Male,Sales Rep,Class II (Moderate Risk),69.1,180.4,26.6,112,60,194,50,124,Never,Light (1-2/week),Sedentary,None,None,None,86487,1000000,734,0
+NEW-0047,41.8,Male,Construction Worker,Class III (High Risk),67.9,133.8,20.4,122,60,194,59,116,Current,Light (1-2/week),Moderate (3-4/week),None,Heart Disease; Diabetes,None,61379,650000,579,450000
+NEW-0048,28.5,Female,Designer,Class I (Low Risk),65.7,162.5,26.4,118,64,177,53,104,Never,Moderate (3-7/week),Moderate (3-4/week),None,None,None,61499,900000,564,0
+NEW-0049,28.9,Female,Software Engineer,Class I (Low Risk),61.9,121.2,22.2,99,64,153,40,93,Never,Light (1-2/week),Light (1-2/week),None,Stroke,Scuba Diving,63171,850000,629,400000
+NEW-0050,37.4,Male,Mechanic,Class II (Moderate Risk),71.4,185.9,25.6,130,93,170,40,109,Former (<5 years),Light (1-2/week),Light (1-2/week),None,None,None,53085,600000,634,0
+NEW-0051,49.7,Male,Construction Worker,Class III (High Risk),67.6,150.4,23.2,128,78,171,47,104,Former (>5 years),Light (1-2/week),Sedentary,None,None,None,108878,1450000,639,250000
+NEW-0052,55.2,Male,Nurse,Class II (Moderate Risk),66.4,199.0,31.7,130,77,181,45,116,Never,Moderate (3-7/week),Moderate (3-4/week),Diabetes Type 2,None,None,104021,1200000,666,0
+NEW-0053,29.6,Male,Manager,Class I (Low Risk),73.4,167.4,21.9,124,80,157,56,81,Never,None,Sedentary,None,Alzheimer's; Heart Disease,Scuba Diving,75291,950000,646,0
+NEW-0054,58.4,Female,Construction Worker,Class III (High Risk),66.9,185.7,29.1,129,73,180,60,100,Former (>5 years),Moderate (3-7/week),Light (1-2/week),None,None,None,131475,1150000,723,150000
+NEW-0055,61.8,Male,Factory Worker,Class III (High Risk),69.5,169.0,24.6,122,63,201,61,120,Never,Light (1-2/week),Light (1-2/week),None,None,None,112660,1000000,664,0
+NEW-0056,59.8,Female,Electrician,Class II (Moderate Risk),62.3,149.0,27.0,125,63,177,61,95,Former (>5 years),Moderate (3-7/week),Light (1-2/week),None,Cancer,None,109438,1050000,660,0
+NEW-0057,37.6,Female,Police Officer,Class IV (Very High Risk),68.3,176.7,26.7,126,85,213,55,139,Never,Heavy (>7/week),Sedentary,None,None,None,51960,750000,734,0
+NEW-0058,59.5,Male,Construction Worker,Class III (High Risk),65.4,128.2,21.1,104,60,180,70,90,Never,Light (1-2/week),Light (1-2/week),Diabetes Type 2,None,None,113784,1200000,717,100000
+NEW-0059,52.4,Male,Electrician,Class II (Moderate Risk),64.7,119.7,20.1,120,76,183,65,99,Never,Light (1-2/week),Active (5+/week),None,None,None,95320,1150000,631,250000
+NEW-0060,48.5,Female,Sales Rep,Class II (Moderate Risk),62.8,163.5,29.1,112,84,172,50,102,Never,Light (1-2/week),Active (5+/week),None,None,None,64642,950000,700,200000
+NEW-0061,31.6,Female,Plumber,Class II (Moderate Risk),62.4,146.1,26.4,112,66,190,58,112,Never,None,Moderate (3-4/week),None,Diabetes,None,56462,450000,598,250000
+NEW-0062,40.3,Male,Nurse,Class II (Moderate Risk),68.3,148.6,22.4,121,60,176,62,95,Never,None,Moderate (3-4/week),None,None,None,80505,950000,642,100000
+NEW-0063,48.8,Male,Roofer,Class IV (Very High Risk),65.2,184.2,30.5,125,82,198,41,137,Never,Light (1-2/week),Sedentary,Thyroid Disorder,None,None,79159,750000,627,0
+NEW-0064,41.7,Female,Mechanic,Class II (Moderate Risk),60.9,120.6,22.8,129,79,167,63,83,Never,None,Light (1-2/week),None,None,None,96229,1000000,615,0
+NEW-0065,24.4,Male,Warehouse Worker,Class III (High Risk),62.9,117.9,21.0,90,72,120,57,43,Former (<5 years),Heavy (>7/week),Light (1-2/week),None,None,None,33700,350000,623,0
+NEW-0066,58.6,Female,Mechanic,Class II (Moderate Risk),68.9,188.2,27.9,126,74,210,56,135,Former (<5 years),Moderate (3-7/week),Light (1-2/week),None,None,None,99937,850000,745,450000
+NEW-0067,40.3,Female,Factory Worker,Class III (High Risk),63.6,116.3,20.2,126,84,197,47,130,Former (>5 years),Light (1-2/week),Active (5+/week),None,None,None,48555,700000,573,0
+NEW-0068,48.7,Male,Software Engineer,Class I (Low Risk),68.4,147.3,22.1,116,60,181,49,111,Current,Moderate (3-7/week),Moderate (3-4/week),None,None,None,102013,900000,770,0
+NEW-0069,53.0,Male,Sales Rep,Class II (Moderate Risk),66.9,167.8,26.3,123,79,190,43,126,Current,Moderate (3-7/week),Sedentary,Diabetes Type 2; Arthritis,Diabetes,None,120483,1350000,665,0
+NEW-0070,69.6,Male,Nurse,Class II (Moderate Risk),69.7,212.0,30.7,130,88,265,42,203,Never,Light (1-2/week),Sedentary,Arthritis,None,None,128014,1900000,697,0
+NEW-0071,40.9,Male,Manager,Class I (Low Risk),66.5,181.2,28.8,109,75,205,44,142,Never,Light (1-2/week),Light (1-2/week),None,None,None,97087,1400000,637,350000
+NEW-0072,46.5,Female,Nurse,Class II (Moderate Risk),69.5,144.4,21.0,123,60,194,60,113,Former (>5 years),Moderate (3-7/week),Moderate (3-4/week),None,None,None,91861,950000,648,0
+NEW-0073,31.3,Female,Warehouse Worker,Class III (High Risk),59.2,111.0,22.2,119,68,184,51,113,Never,Light (1-2/week),Moderate (3-4/week),None,Alzheimer's,None,41181,550000,519,100000
+NEW-0074,43.4,Male,Police Officer,Class IV (Very High Risk),72.2,183.6,24.7,141,72,204,62,122,Current,Light (1-2/week),Moderate (3-4/week),Diabetes Type 2; High Cholesterol,Heart Disease; Diabetes,None,84228,1150000,672,450000
+NEW-0075,55.2,Male,Construction Worker,Class III (High Risk),65.5,190.0,31.2,148,77,199,40,139,Never,Heavy (>7/week),Sedentary,Thyroid Disorder,None,None,96227,1000000,688,0
+NEW-0076,37.2,Male,Sales Rep,Class II (Moderate Risk),64.0,110.2,18.9,114,69,178,80,78,Never,Moderate (3-7/week),Sedentary,None,None,None,75419,1100000,687,0
+NEW-0077,45.1,Male,Sales Rep,Class II (Moderate Risk),62.8,126.7,22.6,138,61,183,57,106,Never,Heavy (>7/week),Moderate (3-4/week),None,Diabetes,None,103309,1200000,694,150000
+NEW-0078,52.3,Male,Roofer,Class IV (Very High Risk),66.6,107.1,17.0,116,67,179,52,107,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,68542,1000000,700,300000
+NEW-0079,41.2,Female,Software Engineer,Class I (Low Risk),64.0,99.0,17.0,112,71,173,55,98,Never,None,Light (1-2/week),None,Alzheimer's,None,89264,950000,650,300000
+NEW-0080,49.3,Female,Mechanic,Class II (Moderate Risk),65.1,163.4,27.1,135,72,228,61,148,Current,None,Sedentary,None,None,None,77529,1100000,681,350000
+NEW-0081,51.4,Female,Factory Worker,Class III (High Risk),66.3,146.9,23.5,105,81,186,35,131,Never,None,Moderate (3-4/week),None,None,None,78706,700000,702,0
+NEW-0082,32.2,Male,Software Engineer,Class I (Low Risk),63.7,123.3,21.3,114,60,161,65,76,Former (>5 years),Light (1-2/week),Sedentary,None,Stroke,None,79534,1050000,575,0
+NEW-0083,59.2,Female,Analyst,Class I (Low Risk),63.4,130.3,22.8,126,60,193,62,111,Current,Light (1-2/week),Sedentary,Diabetes Type 2,None,None,124891,1650000,699,350000
+NEW-0084,37.9,Female,Pilot,Class IV (Very High Risk),66.2,138.3,22.2,111,68,169,55,94,Former (<5 years),Moderate (3-7/week),Moderate (3-4/week),None,Diabetes,None,48720,500000,655,200000
+NEW-0085,40.1,Male,Nurse,Class II (Moderate Risk),66.1,150.9,24.3,139,74,167,43,104,Never,Light (1-2/week),Light (1-2/week),None,Heart Disease,None,75150,800000,624,450000
+NEW-0086,42.2,Male,Designer,Class I (Low Risk),66.5,146.9,23.4,118,64,138,58,60,Former (>5 years),Light (1-2/week),Moderate (3-4/week),None,None,None,108764,1500000,631,0
+NEW-0087,53.6,Male,Teacher,Class I (Low Risk),67.9,170.8,26.0,129,77,206,39,147,Never,Light (1-2/week),Sedentary,None,Heart Disease,None,141718,1250000,730,150000
+NEW-0088,33.1,Female,Chef,Class II (Moderate Risk),58.6,86.2,17.6,123,63,177,79,78,Never,Light (1-2/week),Light (1-2/week),None,None,None,38852,550000,568,0
+NEW-0089,44.8,Female,Software Engineer,Class I (Low Risk),64.9,163.4,27.3,115,65,218,58,140,Never,None,Moderate (3-4/week),Thyroid Disorder,None,None,109300,900000,656,0
+NEW-0090,60.8,Female,Chef,Class II (Moderate Risk),67.2,170.1,26.5,115,80,212,55,137,Never,Light (1-2/week),Light (1-2/week),None,Cancer,None,129150,1400000,734,0
+NEW-0091,41.4,Female,Teacher,Class I (Low Risk),67.0,157.1,24.6,130,69,194,70,104,Never,Light (1-2/week),Light (1-2/week),Asthma,Stroke,None,118798,1300000,651,0
+NEW-0092,56.1,Male,Chef,Class II (Moderate Risk),65.2,175.8,29.1,130,61,209,63,125,Never,Light (1-2/week),Light (1-2/week),None,None,None,111328,1150000,663,0
+NEW-0093,48.2,Female,Manager,Class I (Low Risk),63.6,161.0,28.0,137,60,197,44,132,Never,None,Moderate (3-4/week),None,Stroke,None,114444,1250000,628,400000
+NEW-0094,44.3,Male,Analyst,Class I (Low Risk),67.9,111.3,17.0,113,60,186,40,126,Never,Moderate (3-7/week),Sedentary,Hypertension; Diabetes Type 2,None,None,98229,800000,720,0
+NEW-0095,32.4,Male,Nurse,Class II (Moderate Risk),64.8,131.8,22.1,114,60,165,63,81,Never,None,Light (1-2/week),None,Alzheimer's,None,87152,1300000,608,100000
+NEW-0096,41.4,Female,Factory Worker,Class III (High Risk),65.2,123.8,20.5,132,66,178,63,96,Former (<5 years),Light (1-2/week),Light (1-2/week),None,Heart Disease,None,37223,500000,642,0
+NEW-0097,37.4,Male,Accountant,Class I (Low Risk),64.4,147.1,25.0,130,67,211,53,138,Never,Light (1-2/week),Active (5+/week),None,Stroke,None,64029,600000,590,300000
+NEW-0098,63.3,Male,Designer,Class I (Low Risk),72.3,211.8,28.4,128,72,207,53,133,Never,Light (1-2/week),Active (5+/week),None,None,None,149984,1450000,745,0
+NEW-0099,30.7,Male,Sales Rep,Class II (Moderate Risk),63.6,139.8,24.3,111,65,173,50,104,Never,Light (1-2/week),Light (1-2/week),None,Diabetes,None,53374,450000,646,0
+NEW-0100,43.4,Female,Analyst,Class I (Low Risk),68.1,199.8,30.3,117,74,191,45,126,Former (<5 years),Light (1-2/week),Moderate (3-4/week),Thyroid Disorder; Hypertension; High Cholesterol,None,None,101338,1300000,582,250000
+NEW-0101,54.3,Female,Nurse,Class II (Moderate Risk),66.6,167.6,26.6,138,66,141,49,72,Former (>5 years),Light (1-2/week),Light (1-2/week),None,Stroke,None,80407,700000,679,0
+NEW-0102,62.3,Female,Chef,Class II (Moderate Risk),64.9,154.6,25.8,143,86,210,48,142,Never,Moderate (3-7/week),Sedentary,Diabetes Type 2,None,None,116413,1450000,719,400000
+NEW-0103,42.7,Male,Chef,Class II (Moderate Risk),70.9,195.0,27.3,112,60,178,44,114,Never,Light (1-2/week),Light (1-2/week),None,None,None,68457,650000,650,0
+NEW-0104,42.9,Male,Electrician,Class II (Moderate Risk),67.5,146.5,22.6,106,60,158,48,90,Never,Moderate (3-7/week),Sedentary,None,None,Scuba Diving,81807,1000000,641,0
+NEW-0105,33.8,Female,Mechanic,Class II (Moderate Risk),63.7,137.2,23.7,118,86,163,59,83,Former (>5 years),Moderate (3-7/week),Moderate (3-4/week),None,None,None,73699,850000,697,0
+NEW-0106,42.0,Female,Plumber,Class II (Moderate Risk),58.6,110.3,22.6,123,89,151,56,75,Former (<5 years),None,Sedentary,Asthma,None,None,63803,850000,682,150000
+NEW-0107,37.6,Male,Firefighter,Class IV (Very High Risk),62.4,94.2,17.0,115,65,174,60,94,Never,Light (1-2/week),Sedentary,None,None,None,64780,850000,656,0
+NEW-0108,35.0,Male,Accountant,Class I (Low Risk),67.0,158.3,24.8,108,60,185,53,111,Former (>5 years),Heavy (>7/week),Sedentary,None,Heart Disease; Stroke,None,105090,1500000,679,400000
+NEW-0109,41.2,Male,Plumber,Class II (Moderate Risk),62.9,163.8,29.1,132,80,210,41,150,Former (<5 years),Moderate (3-7/week),Light (1-2/week),Arthritis,None,None,79303,1050000,690,0
+NEW-0110,46.3,Male,Electrician,Class II (Moderate Risk),66.0,140.1,22.6,114,67,157,38,99,Former (>5 years),Light (1-2/week),Moderate (3-4/week),None,None,None,74403,750000,636,0
+NEW-0111,71.9,Female,Teacher,Class I (Low Risk),68.1,181.1,27.5,138,84,212,52,140,Never,Light (1-2/week),Sedentary,None,Stroke,None,154914,2300000,745,500000
+NEW-0112,31.6,Male,Software Engineer,Class I (Low Risk),70.4,149.5,21.2,125,73,177,69,88,Never,Moderate (3-7/week),Sedentary,None,None,Skydiving,75088,600000,608,0
+NEW-0113,37.2,Female,Warehouse Worker,Class III (High Risk),64.2,151.8,25.9,123,83,192,49,123,Former (>5 years),Moderate (3-7/week),Moderate (3-4/week),None,None,None,56875,700000,669,0
+NEW-0114,39.3,Male,Software Engineer,Class I (Low Risk),65.1,168.7,28.0,130,69,177,51,106,Current,Moderate (3-7/week),Sedentary,None,None,None,98100,1450000,687,0
+NEW-0115,57.4,Male,Sales Rep,Class II (Moderate Risk),67.5,138.1,21.3,140,79,208,71,118,Former (>5 years),Light (1-2/week),Moderate (3-4/week),None,None,None,117216,1000000,708,0
+NEW-0116,31.8,Female,Nurse,Class II (Moderate Risk),61.7,112.1,20.7,120,77,195,53,122,Never,Moderate (3-7/week),Sedentary,None,None,None,51763,500000,565,0
+NEW-0117,65.0,Male,Nurse,Class II (Moderate Risk),62.6,148.2,26.6,148,77,216,57,140,Current,Moderate (3-7/week),Active (5+/week),Diabetes Type 2; Thyroid Disorder,None,None,94020,1050000,725,450000
+NEW-0118,52.4,Male,Factory Worker,Class III (High Risk),65.3,172.0,28.3,124,83,198,59,119,Never,None,Sedentary,None,Alzheimer's,Skiing,89271,1250000,708,0
+NEW-0119,46.3,Female,Mechanic,Class II (Moderate Risk),66.2,169.8,27.3,113,75,183,52,110,Former (>5 years),Moderate (3-7/week),Light (1-2/week),None,None,None,78864,650000,646,0
+NEW-0120,61.7,Male,Plumber,Class II (Moderate Risk),62.9,95.6,17.0,119,68,167,50,98,Never,None,Moderate (3-4/week),None,Diabetes; Stroke,Skydiving,123850,1300000,720,350000
+NEW-0121,75.0,Male,Nurse,Class II (Moderate Risk),64.6,180.0,30.3,147,75,199,51,128,Former (<5 years),Light (1-2/week),Moderate (3-4/week),None,None,Base Jumping,148304,1200000,728,0
+NEW-0122,42.1,Male,Warehouse Worker,Class III (High Risk),66.6,130.3,20.6,130,68,171,65,86,Never,Light (1-2/week),Sedentary,None,None,None,66469,950000,696,450000
+NEW-0123,34.5,Male,Mechanic,Class II (Moderate Risk),68.8,152.0,22.6,129,74,179,59,99,Never,None,Sedentary,None,None,None,57710,850000,673,0
+NEW-0124,38.6,Male,Electrician,Class II (Moderate Risk),66.8,164.0,25.8,113,60,201,40,140,Former (<5 years),Light (1-2/week),Sedentary,None,None,None,81137,700000,634,0
+NEW-0125,30.5,Male,Mechanic,Class II (Moderate Risk),71.1,122.2,17.0,120,86,192,56,117,Never,Light (1-2/week),Light (1-2/week),None,None,None,73983,1050000,673,0
+NEW-0126,35.1,Female,Analyst,Class I (Low Risk),61.1,126.1,23.8,122,75,196,58,118,Current,None,Active (5+/week),Diabetes Type 2,None,Skiing,77680,850000,675,0
+NEW-0127,58.5,Male,Manager,Class I (Low Risk),67.4,165.0,25.5,125,60,183,69,94,Never,Light (1-2/week),Active (5+/week),None,None,Base Jumping,132679,1900000,690,0
+NEW-0128,44.7,Male,Mechanic,Class II (Moderate Risk),65.9,160.4,26.0,120,69,147,45,82,Former (>5 years),Moderate (3-7/week),Active (5+/week),Diabetes Type 2,None,None,84007,1000000,655,0
+NEW-0129,52.0,Male,Plumber,Class II (Moderate Risk),67.8,201.9,30.9,102,72,216,53,143,Never,Moderate (3-7/week),Active (5+/week),None,None,None,90107,1300000,661,450000
+NEW-0130,37.3,Male,Factory Worker,Class III (High Risk),65.7,119.2,19.4,112,60,191,49,121,Former (<5 years),Moderate (3-7/week),Sedentary,None,None,None,78150,650000,682,0
+NEW-0131,59.1,Female,Plumber,Class II (Moderate Risk),63.9,126.8,21.8,110,77,189,52,117,Former (>5 years),Heavy (>7/week),Light (1-2/week),None,None,None,118138,1450000,813,0
+NEW-0132,45.5,Male,Warehouse Worker,Class III (High Risk),70.3,166.7,23.7,131,69,202,62,120,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,61296,750000,596,350000
+NEW-0133,18.0,Female,Software Engineer,Class I (Low Risk),65.2,155.0,25.6,115,75,199,60,119,Former (>5 years),Light (1-2/week),Moderate (3-4/week),None,None,None,30000,300000,534,0
+NEW-0134,36.9,Female,Truck Driver,Class III (High Risk),59.8,86.6,17.0,112,60,148,62,66,Current,None,Sedentary,None,Diabetes,None,40681,600000,627,250000
+NEW-0135,41.7,Female,Pilot,Class IV (Very High Risk),67.2,136.1,21.2,104,64,219,72,126,Former (>5 years),Light (1-2/week),Light (1-2/week),None,None,None,93096,1300000,677,0
+NEW-0136,47.3,Female,Logger,Class IV (Very High Risk),61.0,139.8,26.4,111,68,199,48,131,Never,Light (1-2/week),Active (5+/week),None,None,None,86046,1000000,646,0
+NEW-0137,18.0,Male,Accountant,Class I (Low Risk),69.3,155.3,22.7,101,62,210,63,126,Former (>5 years),Light (1-2/week),Light (1-2/week),None,Diabetes,None,41738,600000,601,200000
+NEW-0138,52.0,Male,Electrician,Class II (Moderate Risk),66.0,152.8,24.6,108,69,165,43,102,Never,Light (1-2/week),Light (1-2/week),None,None,None,87504,900000,697,250000
+NEW-0139,21.3,Female,Chef,Class II (Moderate Risk),63.0,95.9,17.0,126,60,149,47,83,Former (>5 years),Moderate (3-7/week),Moderate (3-4/week),None,None,None,38259,350000,501,500000
+NEW-0140,62.0,Male,Analyst,Class I (Low Risk),74.3,246.5,31.4,137,72,192,39,133,Current,Light (1-2/week),Sedentary,Hypertension,None,None,129490,1650000,740,250000
+NEW-0141,38.6,Male,Analyst,Class I (Low Risk),66.4,152.7,24.3,128,82,147,75,52,Former (>5 years),Moderate (3-7/week),Active (5+/week),None,None,None,112821,1000000,695,200000
+NEW-0142,41.1,Female,Construction Worker,Class III (High Risk),62.7,155.9,27.9,119,60,186,47,118,Never,Light (1-2/week),Moderate (3-4/week),High Cholesterol; Hypertension,None,None,78046,850000,596,450000
+NEW-0143,74.3,Male,Construction Worker,Class III (High Risk),66.8,138.4,21.8,135,77,228,57,151,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,131031,1800000,747,300000
+NEW-0144,30.5,Female,Factory Worker,Class III (High Risk),64.1,128.3,22.0,106,60,161,63,78,Former (>5 years),Light (1-2/week),Light (1-2/week),None,None,None,63137,800000,614,0
+NEW-0145,43.3,Male,Manager,Class I (Low Risk),66.2,157.0,25.2,117,73,139,60,59,Former (>5 years),Light (1-2/week),Sedentary,None,None,Skiing,94873,750000,659,350000
+NEW-0146,25.8,Male,Designer,Class I (Low Risk),66.9,149.4,23.5,123,65,174,62,92,Never,Light (1-2/week),Sedentary,None,None,None,55149,800000,661,0
+NEW-0147,28.7,Female,Factory Worker,Class III (High Risk),66.4,108.5,17.3,94,60,169,48,101,Never,Light (1-2/week),Active (5+/week),None,None,None,50329,600000,614,0
+NEW-0148,31.1,Female,Pilot,Class IV (Very High Risk),63.2,143.8,25.3,129,72,195,55,120,Never,Light (1-2/week),Light (1-2/week),None,None,None,40870,350000,604,0
+NEW-0149,62.1,Female,Warehouse Worker,Class III (High Risk),61.4,145.2,27.0,137,71,230,58,152,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,107291,1400000,716,200000
+NEW-0150,58.7,Female,Factory Worker,Class III (High Risk),62.8,132.6,23.6,133,76,205,32,153,Never,Light (1-2/week),Moderate (3-4/week),Diabetes Type 2; Arthritis; High Cholesterol,Heart Disease,None,97146,1050000,699,300000
+NEW-0151,53.4,Male,Analyst,Class I (Low Risk),63.7,161.6,28.0,123,71,226,56,151,Former (<5 years),Light (1-2/week),Moderate (3-4/week),None,None,None,124681,1550000,722,150000
+NEW-0152,53.5,Male,Nurse,Class II (Moderate Risk),58.8,142.7,29.0,143,73,165,46,99,Never,Moderate (3-7/week),Sedentary,None,None,None,79414,1100000,679,0
+NEW-0153,46.6,Male,Factory Worker,Class III (High Risk),70.4,212.3,30.1,153,66,198,52,125,Current,None,Moderate (3-4/week),None,None,None,63184,600000,666,500000
+NEW-0154,53.9,Male,Mechanic,Class II (Moderate Risk),73.9,218.5,28.1,119,61,183,60,103,Former (>5 years),Light (1-2/week),Moderate (3-4/week),None,None,None,99004,800000,636,300000
+NEW-0155,34.6,Female,Construction Worker,Class III (High Risk),67.2,179.0,27.8,98,70,200,50,130,Former (<5 years),Light (1-2/week),Moderate (3-4/week),None,None,None,64720,800000,703,0
+NEW-0156,57.4,Male,Software Engineer,Class I (Low Risk),68.3,149.8,22.6,144,63,202,50,132,Never,Light (1-2/week),Light (1-2/week),None,None,None,114391,1250000,755,0
+NEW-0157,61.8,Female,Software Engineer,Class I (Low Risk),60.8,150.8,28.7,132,64,189,49,120,Never,Light (1-2/week),Light (1-2/week),Hypertension,None,None,142381,1800000,806,0
+NEW-0158,57.3,Male,Warehouse Worker,Class III (High Risk),67.8,167.7,25.7,113,67,220,64,136,Never,Moderate (3-7/week),Light (1-2/week),Diabetes Type 2,None,None,75619,700000,671,200000
+NEW-0159,29.0,Female,Chef,Class II (Moderate Risk),66.1,145.8,23.5,99,70,188,63,104,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,44425,650000,634,0
+NEW-0160,56.6,Female,Electrician,Class II (Moderate Risk),57.6,134.6,28.5,112,69,198,59,119,Former (>5 years),Moderate (3-7/week),Light (1-2/week),None,Diabetes; Alzheimer's,None,101737,1300000,722,200000
+NEW-0161,39.0,Female,Accountant,Class I (Low Risk),66.0,157.0,25.3,122,65,178,54,103,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,81901,1000000,646,100000
+NEW-0162,48.5,Female,Manager,Class I (Low Risk),64.1,120.5,20.6,118,68,171,59,92,Never,None,Light (1-2/week),High Cholesterol,None,None,104464,1050000,686,0
+NEW-0163,53.0,Male,Construction Worker,Class III (High Risk),65.9,166.7,26.9,140,70,209,48,141,Never,Light (1-2/week),Light (1-2/week),Asthma,None,None,89854,750000,667,150000
+NEW-0164,22.4,Female,Manager,Class I (Low Risk),68.4,129.3,19.4,112,60,136,70,45,Former (<5 years),Moderate (3-7/week),Active (5+/week),None,None,None,69787,1000000,575,0
+NEW-0165,54.9,Female,Warehouse Worker,Class III (High Risk),68.8,181.3,26.9,139,83,182,60,102,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,69383,950000,671,0
+NEW-0166,38.9,Male,Chef,Class II (Moderate Risk),65.6,122.9,20.1,107,60,138,53,65,Former (>5 years),Moderate (3-7/week),Sedentary,None,Diabetes; Cancer,None,46624,700000,601,0
+NEW-0167,33.6,Female,Electrician,Class II (Moderate Risk),59.7,120.3,23.8,117,68,175,62,93,Never,Moderate (3-7/week),Moderate (3-4/week),None,Stroke,None,53704,600000,687,0
+NEW-0168,28.7,Male,Factory Worker,Class III (High Risk),62.5,94.6,17.0,90,60,152,69,63,Never,None,Moderate (3-4/week),None,None,None,32987,300000,665,350000
+NEW-0169,48.1,Female,Plumber,Class II (Moderate Risk),65.6,172.7,28.2,123,84,203,70,113,Never,Moderate (3-7/week),Sedentary,None,None,Scuba Diving,101608,1000000,699,0
+NEW-0170,40.7,Male,Chef,Class II (Moderate Risk),66.8,158.3,25.0,109,60,175,52,103,Never,Moderate (3-7/week),Light (1-2/week),Diabetes Type 2,Diabetes,None,79204,900000,705,0
+NEW-0171,44.8,Male,Accountant,Class I (Low Risk),63.4,138.8,24.3,123,67,166,75,71,Current,Light (1-2/week),Sedentary,Hypertension,None,None,116538,1700000,703,0
+NEW-0172,23.4,Female,Software Engineer,Class I (Low Risk),60.3,88.0,17.0,102,71,149,56,73,Never,None,Light (1-2/week),None,Diabetes; Stroke,None,36898,300000,607,0
+NEW-0173,39.1,Female,Manager,Class I (Low Risk),67.3,130.2,20.2,114,61,165,64,80,Never,None,Moderate (3-4/week),None,Alzheimer's,None,75486,750000,638,0
+NEW-0174,44.4,Female,Sales Rep,Class II (Moderate Risk),65.8,139.5,22.6,131,60,190,56,114,Never,Moderate (3-7/week),Moderate (3-4/week),None,None,None,93384,1350000,624,0
+NEW-0175,65.3,Male,Plumber,Class II (Moderate Risk),71.1,182.9,25.4,137,64,215,46,149,Former (>5 years),None,Sedentary,None,None,None,125229,1750000,683,250000
+NEW-0176,59.1,Female,Accountant,Class I (Low Risk),65.7,210.8,34.3,139,63,222,76,126,Never,Light (1-2/week),Light (1-2/week),None,Diabetes,None,129733,1250000,733,450000
+NEW-0177,52.6,Male,Accountant,Class I (Low Risk),63.2,150.2,26.4,134,77,187,45,122,Former (<5 years),Light (1-2/week),Sedentary,None,Alzheimer's,None,109046,1550000,680,0
+NEW-0178,46.4,Female,Construction Worker,Class III (High Risk),60.0,146.7,28.7,135,91,200,51,129,Never,Light (1-2/week),Light (1-2/week),None,Cancer,None,49942,450000,587,200000
+NEW-0179,32.5,Female,Software Engineer,Class I (Low Risk),60.1,105.2,20.4,105,74,177,64,94,Former (>5 years),Light (1-2/week),Light (1-2/week),None,None,None,55841,500000,624,0
+NEW-0180,25.3,Female,Teacher,Class I (Low Risk),65.8,113.0,18.4,94,60,144,66,58,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,57327,750000,610,400000
+NEW-0181,34.0,Male,Plumber,Class II (Moderate Risk),65.4,113.0,18.6,108,68,171,71,79,Never,Moderate (3-7/week),Sedentary,None,None,None,37935,300000,612,0
+NEW-0182,38.2,Female,Chef,Class II (Moderate Risk),64.3,139.2,23.7,109,69,175,69,86,Former (<5 years),None,Sedentary,None,None,None,44800,450000,605,300000
+NEW-0183,60.6,Female,Software Engineer,Class I (Low Risk),64.6,136.0,22.9,128,60,207,47,140,Current,Light (1-2/week),Moderate (3-4/week),None,None,None,136789,1950000,726,0
+NEW-0184,41.5,Female,Software Engineer,Class I (Low Risk),56.3,101.2,22.5,94,80,172,47,105,Former (>5 years),Light (1-2/week),Moderate (3-4/week),None,None,None,66530,750000,670,350000
+NEW-0185,50.1,Male,Warehouse Worker,Class III (High Risk),66.4,155.2,24.7,116,64,214,51,143,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,85254,900000,657,0
+NEW-0186,42.7,Female,Designer,Class I (Low Risk),70.3,206.1,29.3,132,70,209,35,154,Current,Light (1-2/week),Moderate (3-4/week),Arthritis; Diabetes Type 2,Heart Disease; Cancer,None,99346,1450000,635,0
+NEW-0187,53.3,Male,Teacher,Class I (Low Risk),69.4,206.4,30.1,130,72,215,65,130,Former (<5 years),None,Sedentary,Thyroid Disorder; Hypertension,None,None,100286,1450000,680,350000
+NEW-0188,18.0,Female,Construction Worker,Class III (High Risk),66.9,110.9,17.4,107,60,147,54,74,Never,Light (1-2/week),Light (1-2/week),None,None,None,30000,250000,620,0
+NEW-0189,34.2,Male,Sales Rep,Class II (Moderate Risk),70.6,204.8,28.9,115,82,203,76,108,Never,None,Moderate (3-4/week),Arthritis,Diabetes; Stroke,None,85439,800000,649,0
+NEW-0190,57.8,Female,Teacher,Class I (Low Risk),63.3,179.9,31.6,123,71,196,48,128,Former (<5 years),Light (1-2/week),Active (5+/week),Arthritis,Stroke,None,125608,1550000,708,0
+NEW-0191,52.9,Female,Manager,Class I (Low Risk),64.4,160.8,27.3,118,66,188,53,115,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,139435,1950000,708,500000
+NEW-0192,36.1,Female,Construction Worker,Class III (High Risk),65.8,143.2,23.2,114,78,191,55,116,Never,Moderate (3-7/week),Sedentary,None,Stroke,None,50437,450000,615,0
+NEW-0193,28.4,Male,Designer,Class I (Low Risk),66.2,135.6,21.8,98,60,213,73,120,Current,None,Sedentary,None,Stroke,None,60867,700000,588,100000
+NEW-0194,51.5,Male,Teacher,Class I (Low Risk),65.8,157.3,25.6,126,67,162,46,96,Never,Light (1-2/week),Moderate (3-4/week),None,Heart Disease; Cancer,Skiing,112211,1550000,664,0
+NEW-0195,30.0,Male,Plumber,Class II (Moderate Risk),72.0,176.8,24.0,112,71,167,79,68,Current,Light (1-2/week),Light (1-2/week),None,None,None,93416,800000,704,150000
+NEW-0196,57.0,Female,Accountant,Class I (Low Risk),62.9,103.1,18.3,137,65,183,63,100,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,137873,1350000,727,300000
+NEW-0197,35.7,Male,Designer,Class I (Low Risk),66.5,136.0,21.6,126,63,166,58,89,Never,Light (1-2/week),Light (1-2/week),None,None,None,81955,1050000,642,0
+NEW-0198,32.2,Male,Factory Worker,Class III (High Risk),63.6,115.2,20.0,115,60,171,67,84,Former (<5 years),Light (1-2/week),Light (1-2/week),None,None,None,30000,250000,571,0
+NEW-0199,28.6,Male,Accountant,Class I (Low Risk),62.8,95.3,17.0,110,60,161,69,72,Never,Light (1-2/week),Light (1-2/week),None,Diabetes,None,57704,750000,647,0
+NEW-0200,58.6,Female,Plumber,Class II (Moderate Risk),62.0,100.4,18.4,112,89,179,68,90,Current,Light (1-2/week),Moderate (3-4/week),Arthritis,None,None,107469,1200000,631,200000
+NEW-0201,51.1,Female,Chef,Class II (Moderate Risk),62.1,181.4,33.0,125,87,241,37,184,Former (>5 years),Moderate (3-7/week),Light (1-2/week),None,None,None,102493,1500000,669,0
+NEW-0202,59.0,Male,Software Engineer,Class I (Low Risk),68.2,179.3,27.1,127,77,173,63,90,Never,Heavy (>7/week),Light (1-2/week),Arthritis; Thyroid Disorder,Cancer,None,145508,1700000,741,200000
+NEW-0203,33.7,Female,Construction Worker,Class III (High Risk),61.1,105.8,19.9,104,67,157,54,83,Never,Light (1-2/week),Moderate (3-4/week),None,Diabetes,None,40368,350000,571,0
+NEW-0204,38.5,Female,Teacher,Class I (Low Risk),67.3,171.5,26.6,125,80,173,51,103,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,107031,1500000,659,0
+NEW-0205,34.0,Female,Construction Worker,Class III (High Risk),60.4,98.2,18.9,125,66,171,59,93,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,37512,450000,511,0
+NEW-0206,25.3,Male,Manager,Class I (Low Risk),70.7,173.0,24.3,128,67,183,43,120,Current,None,Sedentary,None,None,None,41677,600000,644,300000
+NEW-0207,48.5,Male,Plumber,Class II (Moderate Risk),67.0,145.4,22.8,141,62,214,56,138,Never,Moderate (3-7/week),Sedentary,None,None,None,56837,650000,680,0
+NEW-0208,44.2,Male,Construction Worker,Class III (High Risk),65.7,150.8,24.6,96,70,186,74,93,Former (>5 years),Moderate (3-7/week),Sedentary,None,None,None,103331,1250000,659,0
+NEW-0209,56.8,Male,Sales Rep,Class II (Moderate Risk),71.0,189.6,26.4,132,69,172,65,87,Never,Light (1-2/week),Light (1-2/week),None,None,None,89003,1200000,678,0
+NEW-0210,57.7,Female,Electrician,Class II (Moderate Risk),59.9,127.2,25.0,143,60,187,42,125,Never,Light (1-2/week),Moderate (3-4/week),Diabetes Type 2,Alzheimer's,Scuba Diving,119979,1700000,783,0
+NEW-0211,59.5,Male,Truck Driver,Class III (High Risk),68.1,169.4,25.7,138,77,174,44,110,Never,Light (1-2/week),Sedentary,None,None,None,75488,700000,696,0
+NEW-0212,41.7,Female,Mechanic,Class II (Moderate Risk),65.8,176.8,28.7,127,69,216,38,159,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,74353,1100000,642,400000
+NEW-0213,43.1,Female,Construction Worker,Class III (High Risk),62.4,161.8,29.2,108,76,173,33,120,Current,None,Active (5+/week),None,Cancer; Diabetes,None,72913,950000,673,500000
+NEW-0214,61.5,Male,Chef,Class II (Moderate Risk),67.1,195.7,30.5,144,76,185,59,105,Former (<5 years),Light (1-2/week),Active (5+/week),Arthritis,None,None,126336,1000000,680,150000
+NEW-0215,40.7,Male,Accountant,Class I (Low Risk),61.7,148.0,27.3,112,74,204,60,124,Never,Moderate (3-7/week),Light (1-2/week),None,Alzheimer's,None,97968,1450000,700,0
+NEW-0216,43.9,Male,Analyst,Class I (Low Risk),70.1,156.4,22.4,132,70,179,57,103,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,120911,1600000,661,0
+NEW-0217,48.2,Male,Chef,Class II (Moderate Risk),64.0,133.3,22.8,128,64,204,71,113,Never,None,Light (1-2/week),None,None,None,77885,800000,643,0
+NEW-0218,55.8,Female,Electrician,Class II (Moderate Risk),64.9,120.0,20.0,116,70,224,67,137,Former (<5 years),Light (1-2/week),Moderate (3-4/week),None,Alzheimer's,None,139505,1900000,712,0
+NEW-0219,18.0,Female,Construction Worker,Class III (High Risk),71.5,123.5,17.0,90,67,177,72,85,Never,Moderate (3-7/week),Moderate (3-4/week),None,None,None,30000,300000,506,0
+NEW-0220,49.2,Male,Mechanic,Class II (Moderate Risk),71.1,192.6,26.7,126,79,213,50,142,Current,Light (1-2/week),Sedentary,None,Heart Disease,None,95673,1050000,673,300000
+NEW-0221,48.2,Female,Electrician,Class II (Moderate Risk),63.9,137.1,23.6,116,73,199,50,129,Former (>5 years),None,Light (1-2/week),Hypertension,None,None,69908,850000,657,200000
+NEW-0222,42.0,Female,Nurse,Class II (Moderate Risk),67.0,177.7,27.8,111,68,196,50,126,Never,None,Light (1-2/week),None,None,None,94976,1100000,601,0
+NEW-0223,36.9,Female,Sales Rep,Class II (Moderate Risk),64.2,117.6,20.1,110,60,194,63,111,Former (>5 years),Moderate (3-7/week),Moderate (3-4/week),None,None,None,33470,350000,660,0
+NEW-0224,42.3,Male,Pilot,Class IV (Very High Risk),65.8,150.5,24.4,117,68,162,52,91,Former (>5 years),Light (1-2/week),Light (1-2/week),Thyroid Disorder,Heart Disease; Stroke,None,58821,750000,663,350000
+NEW-0225,43.6,Female,Electrician,Class II (Moderate Risk),63.8,116.6,20.2,125,70,199,61,118,Former (<5 years),Moderate (3-7/week),Active (5+/week),Arthritis; Hypertension,None,None,76055,600000,680,0
+NEW-0226,36.4,Male,Plumber,Class II (Moderate Risk),65.7,127.8,20.8,127,65,173,51,102,Never,None,Moderate (3-4/week),None,None,None,67124,850000,635,0
+NEW-0227,61.4,Male,Truck Driver,Class III (High Risk),66.7,185.7,29.4,125,75,215,43,152,Never,Heavy (>7/week),Light (1-2/week),None,None,None,106391,1550000,662,300000
+NEW-0228,18.6,Male,Software Engineer,Class I (Low Risk),67.6,157.7,24.3,90,69,186,35,130,Current,Moderate (3-7/week),Sedentary,None,None,None,50385,550000,542,500000
+NEW-0229,68.8,Female,Chef,Class II (Moderate Risk),64.2,123.6,21.1,141,69,198,46,131,Current,Light (1-2/week),Moderate (3-4/week),None,None,None,138799,1650000,758,0
+NEW-0230,54.4,Female,Factory Worker,Class III (High Risk),62.6,122.6,22.0,133,78,151,60,71,Never,Light (1-2/week),Light (1-2/week),Thyroid Disorder,None,None,92551,1150000,685,0
+NEW-0231,52.6,Female,Plumber,Class II (Moderate Risk),56.6,146.9,32.2,156,75,217,44,153,Current,None,Moderate (3-4/week),None,None,None,106269,1050000,687,250000
+NEW-0232,42.4,Male,Factory Worker,Class III (High Risk),66.4,126.5,20.2,130,80,158,62,76,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,76785,750000,611,200000
+NEW-0233,38.5,Male,Logger,Class IV (Very High Risk),65.2,169.4,28.0,131,74,179,57,102,Never,None,Light (1-2/week),None,None,None,79292,750000,705,0
+NEW-0234,35.6,Female,Teacher,Class I (Low Risk),57.8,86.7,18.3,107,67,176,58,98,Never,Light (1-2/week),Light (1-2/week),None,None,None,91821,750000,673,400000
+NEW-0235,37.8,Male,Mechanic,Class II (Moderate Risk),65.7,156.0,25.4,123,60,196,56,120,Never,Light (1-2/week),Active (5+/week),None,None,None,49923,750000,622,0
+NEW-0236,42.3,Male,Mechanic,Class II (Moderate Risk),64.3,143.3,24.4,123,78,150,57,73,Former (>5 years),Light (1-2/week),Light (1-2/week),None,Diabetes,Motorcycle Racing,67627,900000,635,0
+NEW-0237,69.5,Female,Designer,Class I (Low Risk),67.1,208.6,32.6,144,78,198,68,109,Never,Light (1-2/week),Active (5+/week),None,None,None,139667,1400000,756,200000
+NEW-0238,40.4,Male,Firefighter,Class IV (Very High Risk),66.0,110.4,17.8,117,60,120,53,47,Former (>5 years),None,Moderate (3-4/week),None,None,None,72228,950000,600,450000
+NEW-0239,21.3,Male,Analyst,Class I (Low Risk),72.5,215.7,28.9,120,63,185,60,105,Former (>5 years),None,Active (5+/week),None,Diabetes,None,66046,600000,635,0
+NEW-0240,51.9,Female,Manager,Class I (Low Risk),62.9,143.8,25.5,134,74,210,46,144,Current,None,Light (1-2/week),None,None,None,123289,1550000,663,400000
+NEW-0241,45.9,Female,Accountant,Class I (Low Risk),62.0,126.7,23.2,131,73,163,51,92,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,119182,1250000,756,200000
+NEW-0242,55.2,Male,Designer,Class I (Low Risk),65.0,151.1,25.1,131,74,198,46,132,Never,None,Moderate (3-4/week),None,None,None,118678,1750000,710,200000
+NEW-0243,40.0,Male,Mechanic,Class II (Moderate Risk),70.0,118.3,17.0,126,82,174,52,102,Former (<5 years),Moderate (3-7/week),Moderate (3-4/week),None,None,None,93994,1300000,644,0
+NEW-0244,35.6,Female,Software Engineer,Class I (Low Risk),64.9,165.1,27.5,139,63,186,55,111,Former (<5 years),Light (1-2/week),Light (1-2/week),None,None,None,79303,950000,651,0
+NEW-0245,51.7,Female,Designer,Class I (Low Risk),65.0,129.1,21.5,124,60,153,57,76,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,125203,1450000,697,0
+NEW-0246,41.3,Female,Analyst,Class I (Low Risk),64.9,183.3,30.6,127,88,191,51,120,Current,Light (1-2/week),Active (5+/week),None,Diabetes,None,101493,1050000,566,450000
+NEW-0247,46.7,Female,Software Engineer,Class I (Low Risk),61.0,144.9,27.4,120,65,195,47,128,Never,None,Active (5+/week),None,None,None,97489,1000000,670,250000
+NEW-0248,61.9,Male,Pilot,Class IV (Very High Risk),66.4,223.8,35.7,152,74,228,53,155,Never,None,Light (1-2/week),None,Diabetes,None,107217,1350000,720,0
+NEW-0249,33.1,Male,Truck Driver,Class III (High Risk),70.8,162.2,22.8,125,62,211,54,137,Former (>5 years),Moderate (3-7/week),Moderate (3-4/week),None,None,None,34313,300000,530,0
+NEW-0250,46.9,Female,Pilot,Class IV (Very High Risk),66.3,175.1,28.0,126,62,226,51,155,Never,None,Moderate (3-4/week),None,None,None,48883,600000,642,0
+NEW-0251,21.2,Female,Plumber,Class II (Moderate Risk),56.5,85.0,18.7,95,60,152,46,86,Never,Light (1-2/week),Light (1-2/week),None,None,None,40620,550000,551,0
+NEW-0252,38.8,Female,Teacher,Class I (Low Risk),65.1,179.8,29.9,118,65,206,52,134,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,92673,1350000,664,0
+NEW-0253,36.7,Male,Construction Worker,Class III (High Risk),67.5,204.1,31.5,122,87,162,49,93,Former (<5 years),Heavy (>7/week),Sedentary,None,Heart Disease; Diabetes,None,53342,700000,574,150000
+NEW-0254,41.4,Female,Analyst,Class I (Low Risk),61.8,112.9,20.8,118,80,187,65,101,Never,Light (1-2/week),Light (1-2/week),None,None,None,102111,1400000,627,0
+NEW-0255,42.9,Male,Analyst,Class I (Low Risk),67.1,147.0,23.0,117,72,200,70,110,Never,Moderate (3-7/week),Moderate (3-4/week),None,None,None,99670,1100000,719,0
+NEW-0256,43.7,Female,Teacher,Class I (Low Risk),64.4,151.4,25.7,132,85,161,52,89,Never,Light (1-2/week),Sedentary,None,None,None,110526,900000,629,100000
+NEW-0257,26.6,Female,Sales Rep,Class II (Moderate Risk),63.5,100.9,17.6,113,60,167,73,74,Never,None,Moderate (3-4/week),None,None,Scuba Diving,72618,900000,632,0
+NEW-0258,36.0,Female,Factory Worker,Class III (High Risk),68.1,158.0,23.9,120,71,155,43,92,Never,Light (1-2/week),Light (1-2/week),None,Diabetes,None,64014,650000,618,0
+NEW-0259,52.0,Male,Accountant,Class I (Low Risk),66.9,189.3,29.7,146,74,219,53,146,Never,None,Sedentary,None,None,Skydiving,138896,1550000,644,0
+NEW-0260,52.4,Male,Truck Driver,Class III (High Risk),65.9,172.1,27.9,127,75,191,30,141,Former (>5 years),Moderate (3-7/week),Sedentary,None,None,None,103107,1050000,610,250000
+NEW-0261,32.5,Female,Analyst,Class I (Low Risk),65.4,148.1,24.3,126,70,199,63,115,Former (>5 years),None,Moderate (3-4/week),None,None,None,55590,650000,629,0
+NEW-0262,38.0,Female,Mechanic,Class II (Moderate Risk),69.3,141.6,20.7,124,60,169,58,90,Current,Heavy (>7/week),Light (1-2/week),None,Alzheimer's,None,42715,450000,615,0
+NEW-0263,50.7,Female,Warehouse Worker,Class III (High Risk),67.0,183.6,28.7,130,75,176,36,120,Current,None,Light (1-2/week),Thyroid Disorder,None,None,81365,1050000,619,0
+NEW-0264,18.2,Male,Chef,Class II (Moderate Risk),66.1,117.9,19.0,96,64,163,62,81,Never,None,Moderate (3-4/week),None,None,None,30000,250000,564,0
+NEW-0265,30.3,Female,Pilot,Class IV (Very High Risk),63.7,144.2,25.0,114,67,179,54,105,Former (>5 years),Moderate (3-7/week),Active (5+/week),None,Heart Disease; Diabetes,None,35343,300000,607,400000
+NEW-0266,48.2,Male,Chef,Class II (Moderate Risk),68.7,222.8,33.2,132,77,191,52,119,Never,Light (1-2/week),Moderate (3-4/week),Hypertension; Diabetes Type 2; High Cholesterol,Alzheimer's,None,71183,650000,606,300000
+NEW-0267,32.2,Female,Analyst,Class I (Low Risk),64.0,99.2,17.0,112,64,134,56,58,Former (>5 years),Light (1-2/week),Light (1-2/week),None,Alzheimer's,None,74657,1050000,662,0
+NEW-0268,35.3,Female,Factory Worker,Class III (High Risk),67.9,141.2,21.5,111,60,120,52,48,Former (<5 years),Light (1-2/week),Moderate (3-4/week),None,None,None,30000,400000,570,400000
+NEW-0269,41.4,Male,Factory Worker,Class III (High Risk),70.3,159.4,22.7,116,63,184,80,84,Former (>5 years),Light (1-2/week),Moderate (3-4/week),Hypertension,None,Rock Climbing,70440,700000,600,300000
+NEW-0270,48.1,Male,Accountant,Class I (Low Risk),64.6,167.5,28.2,126,74,214,73,121,Never,Light (1-2/week),Light (1-2/week),None,None,None,101059,1250000,594,100000
+NEW-0271,24.7,Male,Mechanic,Class II (Moderate Risk),65.8,143.1,23.2,109,64,140,58,63,Never,Light (1-2/week),Sedentary,None,Alzheimer's,None,43766,600000,522,0
+NEW-0272,68.8,Male,Mechanic,Class II (Moderate Risk),69.4,197.5,28.8,159,71,218,38,161,Never,Moderate (3-7/week),Light (1-2/week),None,Diabetes; Stroke,None,153590,1600000,771,350000
+NEW-0273,36.6,Male,Analyst,Class I (Low Risk),65.1,162.1,26.9,135,64,199,45,134,Never,None,Sedentary,Hypertension; High Cholesterol,None,None,97179,950000,653,450000
+NEW-0274,25.1,Female,Electrician,Class II (Moderate Risk),62.4,136.5,24.6,117,60,148,38,90,Current,Moderate (3-7/week),Moderate (3-4/week),None,None,None,30000,300000,603,100000
+NEW-0275,54.0,Female,Teacher,Class I (Low Risk),58.8,128.7,26.1,117,71,232,42,170,Never,Light (1-2/week),Moderate (3-4/week),None,Diabetes; Cancer,Scuba Diving,123179,1500000,581,0
+NEW-0276,51.5,Male,Mechanic,Class II (Moderate Risk),65.6,183.3,29.9,128,76,239,59,161,Never,Light (1-2/week),Active (5+/week),None,Heart Disease,None,103393,1200000,733,400000
+NEW-0277,49.5,Female,Plumber,Class II (Moderate Risk),61.7,92.2,17.0,112,72,165,57,88,Never,Light (1-2/week),Sedentary,None,Cancer; Diabetes,Skiing,85702,700000,650,0
+NEW-0278,53.0,Female,Plumber,Class II (Moderate Risk),65.7,153.2,25.0,134,71,195,52,124,Former (>5 years),None,Light (1-2/week),None,None,Skiing,89649,1100000,662,0
+NEW-0279,43.4,Female,Nurse,Class II (Moderate Risk),65.6,134.3,22.0,120,77,200,46,134,Never,Light (1-2/week),Active (5+/week),None,None,None,112539,1100000,698,250000
+NEW-0280,39.1,Female,Electrician,Class II (Moderate Risk),58.4,130.3,26.9,125,61,187,40,127,Former (>5 years),Light (1-2/week),Moderate (3-4/week),None,None,None,47741,400000,620,0
+NEW-0281,42.3,Female,Analyst,Class I (Low Risk),68.5,159.2,23.9,116,62,187,31,136,Never,None,Moderate (3-4/week),None,Diabetes; Cancer,None,101318,1400000,734,100000
+NEW-0282,57.0,Male,Mechanic,Class II (Moderate Risk),73.3,177.8,23.3,132,69,217,55,142,Never,Moderate (3-7/week),Light (1-2/week),High Cholesterol,None,None,120081,1100000,665,0
+NEW-0283,43.2,Female,Chef,Class II (Moderate Risk),63.1,163.4,28.9,115,66,188,34,134,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,71898,800000,656,0
+NEW-0284,63.7,Male,Plumber,Class II (Moderate Risk),66.0,164.4,26.5,127,69,198,53,125,Never,Moderate (3-7/week),Moderate (3-4/week),None,None,None,122274,1550000,743,0
+NEW-0285,40.3,Female,Nurse,Class II (Moderate Risk),64.6,129.0,21.7,110,76,176,51,105,Former (<5 years),Light (1-2/week),Moderate (3-4/week),None,Alzheimer's,None,74532,850000,691,0
+NEW-0286,38.1,Male,Truck Driver,Class III (High Risk),68.1,167.8,25.4,121,68,218,51,146,Current,Light (1-2/week),Light (1-2/week),None,None,None,55349,650000,617,0
+NEW-0287,49.6,Female,Designer,Class I (Low Risk),59.2,146.2,29.3,115,75,187,69,98,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,118634,1700000,594,0
+NEW-0288,42.3,Female,Manager,Class I (Low Risk),65.3,137.4,22.7,109,60,218,80,118,Former (>5 years),Light (1-2/week),Active (5+/week),None,None,Base Jumping,83941,1200000,666,450000
+NEW-0289,39.4,Male,Mechanic,Class II (Moderate Risk),70.0,155.1,22.2,114,60,161,65,76,Former (>5 years),Light (1-2/week),Moderate (3-4/week),Arthritis,None,None,77735,800000,642,0
+NEW-0290,61.4,Male,Sales Rep,Class II (Moderate Risk),63.2,125.8,22.1,127,79,226,33,174,Never,Light (1-2/week),Light (1-2/week),Hypertension,None,None,103046,1150000,755,250000
+NEW-0291,28.8,Female,Construction Worker,Class III (High Risk),57.5,97.1,20.7,123,66,189,74,95,Never,Light (1-2/week),Sedentary,None,Heart Disease,None,55863,800000,674,0
+NEW-0292,26.0,Male,Nurse,Class II (Moderate Risk),65.4,107.0,17.6,103,70,173,56,96,Former (>5 years),None,Moderate (3-4/week),None,None,None,60712,650000,559,200000
+NEW-0293,72.5,Male,Accountant,Class I (Low Risk),69.3,236.8,34.7,140,72,257,52,185,Former (<5 years),Light (1-2/week),Sedentary,Thyroid Disorder; Asthma,None,None,151866,1550000,755,0
+NEW-0294,41.2,Female,Software Engineer,Class I (Low Risk),64.9,172.8,28.8,124,60,174,50,104,Never,Moderate (3-7/week),Active (5+/week),Hypertension,None,Motorcycle Racing,95275,1100000,580,0
+NEW-0295,39.4,Male,Electrician,Class II (Moderate Risk),66.7,130.0,20.5,116,76,162,40,102,Never,Moderate (3-7/week),Sedentary,None,Stroke,None,100962,950000,635,400000
+NEW-0296,41.9,Female,Mechanic,Class II (Moderate Risk),64.1,107.0,18.3,118,62,175,64,91,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,91638,1350000,730,300000
+NEW-0297,42.4,Female,Chef,Class II (Moderate Risk),62.3,104.7,19.0,122,66,168,46,103,Former (>5 years),Moderate (3-7/week),Moderate (3-4/week),None,None,None,64810,800000,672,350000
+NEW-0298,56.1,Male,Truck Driver,Class III (High Risk),67.7,171.1,26.2,142,79,214,47,148,Former (<5 years),None,Moderate (3-4/week),None,None,None,125326,1350000,767,450000
+NEW-0299,50.1,Female,Nurse,Class II (Moderate Risk),62.0,117.0,21.4,126,71,178,46,112,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,95572,1400000,671,0
+NEW-0300,27.2,Female,Truck Driver,Class III (High Risk),64.0,147.7,25.3,117,63,207,48,139,Never,Moderate (3-7/week),Light (1-2/week),None,None,Motorcycle Racing,39966,500000,584,0
+NEW-0301,45.9,Male,Chef,Class II (Moderate Risk),65.7,181.2,29.5,130,73,188,51,117,Never,Light (1-2/week),Sedentary,None,None,None,92571,800000,697,0
+NEW-0302,48.0,Male,Manager,Class I (Low Risk),69.2,205.9,30.2,134,60,204,72,111,Never,Light (1-2/week),Moderate (3-4/week),Hypertension; Diabetes Type 2,None,None,125608,1050000,689,0
+NEW-0303,53.9,Female,Logger,Class IV (Very High Risk),63.1,157.6,27.8,137,84,167,42,105,Never,Moderate (3-7/week),Sedentary,None,None,None,86874,1050000,710,0
+NEW-0304,57.0,Male,Construction Worker,Class III (High Risk),67.3,118.4,18.4,136,72,191,35,136,Former (<5 years),Light (1-2/week),Light (1-2/week),None,Stroke,None,115958,1000000,695,0
+NEW-0305,59.6,Female,Designer,Class I (Low Risk),66.4,149.9,23.9,133,80,161,65,76,Never,Moderate (3-7/week),Sedentary,None,None,None,114551,1500000,672,300000
+NEW-0306,31.4,Female,Pilot,Class IV (Very High Risk),70.8,164.2,23.0,95,60,157,57,80,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,36631,350000,552,300000
+NEW-0307,61.7,Male,Plumber,Class II (Moderate Risk),66.7,164.9,26.0,148,88,200,43,137,Former (>5 years),None,Light (1-2/week),None,None,None,113426,1450000,802,0
+NEW-0308,34.6,Female,Manager,Class I (Low Risk),61.0,124.9,23.6,115,69,179,54,105,Never,Light (1-2/week),Light (1-2/week),None,Stroke,None,76389,1100000,622,150000
+NEW-0309,31.9,Female,Manager,Class I (Low Risk),63.3,124.2,21.8,110,69,165,58,87,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,78505,1150000,637,0
+NEW-0310,32.4,Male,Nurse,Class II (Moderate Risk),64.1,156.7,26.8,121,60,144,63,61,Former (<5 years),Light (1-2/week),Moderate (3-4/week),None,Alzheimer's,None,64645,750000,609,500000
+NEW-0311,46.0,Female,Mechanic,Class II (Moderate Risk),64.6,123.5,20.8,120,67,159,59,80,Never,Light (1-2/week),Sedentary,Asthma; Hypertension,Alzheimer's; Heart Disease,None,86583,1300000,622,500000
+NEW-0312,55.4,Female,Accountant,Class I (Low Risk),62.3,127.5,23.1,134,76,174,60,94,Former (<5 years),None,Moderate (3-4/week),None,None,None,132266,1550000,691,250000
+NEW-0313,52.0,Female,Sales Rep,Class II (Moderate Risk),58.3,110.5,22.8,133,66,166,30,116,Never,Light (1-2/week),Light (1-2/week),None,Heart Disease,None,109314,1200000,661,400000
+NEW-0314,26.5,Male,Designer,Class I (Low Risk),68.1,183.8,27.9,116,60,161,63,78,Never,Moderate (3-7/week),Sedentary,None,Alzheimer's; Diabetes,None,71226,900000,566,0
+NEW-0315,75.0,Male,Manager,Class I (Low Risk),65.3,168.6,27.8,136,83,211,35,156,Current,Light (1-2/week),Moderate (3-4/week),None,None,None,137112,1250000,725,400000
+NEW-0316,47.4,Male,Manager,Class I (Low Risk),65.5,164.8,27.0,140,60,196,49,127,Former (>5 years),Moderate (3-7/week),Moderate (3-4/week),Diabetes Type 2,Diabetes; Heart Disease,None,98326,1200000,652,150000
+NEW-0317,53.5,Male,Mechanic,Class II (Moderate Risk),67.3,150.8,23.4,145,67,197,55,122,Never,Light (1-2/week),Light (1-2/week),None,None,Skydiving,73900,1100000,662,300000
+NEW-0318,38.1,Female,Construction Worker,Class III (High Risk),62.7,174.6,31.2,118,71,209,44,145,Current,Light (1-2/week),Sedentary,None,None,None,41026,600000,638,0
+NEW-0319,45.4,Male,Plumber,Class II (Moderate Risk),68.5,118.1,17.7,133,67,192,80,92,Former (<5 years),Light (1-2/week),Sedentary,Hypertension,Diabetes,None,78626,750000,625,0
+NEW-0320,40.5,Male,Analyst,Class I (Low Risk),66.5,152.4,24.3,132,68,206,67,119,Never,None,Active (5+/week),None,None,None,98226,850000,598,350000
+NEW-0321,55.7,Female,Chef,Class II (Moderate Risk),66.1,155.1,25.0,117,71,204,43,142,Never,None,Sedentary,None,None,None,83475,1050000,808,0
+NEW-0322,31.3,Male,Analyst,Class I (Low Risk),64.9,171.6,28.7,109,60,201,35,146,Former (<5 years),Moderate (3-7/week),Moderate (3-4/week),None,None,None,69855,750000,654,0
+NEW-0323,63.2,Female,Factory Worker,Class III (High Risk),65.5,176.2,28.8,136,85,234,57,157,Never,Light (1-2/week),Light (1-2/week),None,None,None,108993,1200000,672,300000
+NEW-0324,35.6,Male,Mechanic,Class II (Moderate Risk),61.2,117.6,22.0,104,60,196,65,111,Former (<5 years),Light (1-2/week),Active (5+/week),None,Cancer,Skiing,51720,750000,611,0
+NEW-0325,71.7,Female,Teacher,Class I (Low Risk),61.5,166.9,31.1,156,79,228,35,173,Never,Light (1-2/week),Moderate (3-4/week),None,Diabetes,None,152256,1650000,757,0
+NEW-0326,62.3,Male,Designer,Class I (Low Risk),65.4,166.7,27.4,146,82,213,48,145,Former (>5 years),Light (1-2/week),Light (1-2/week),Hypertension,Heart Disease,None,147670,2100000,735,0
+NEW-0327,30.5,Male,Manager,Class I (Low Risk),66.4,152.2,24.3,130,60,190,49,121,Current,Light (1-2/week),Sedentary,None,None,None,75167,1100000,613,0
+NEW-0328,68.2,Female,Chef,Class II (Moderate Risk),65.9,191.5,31.0,132,80,193,30,143,Never,Moderate (3-7/week),Moderate (3-4/week),Diabetes Type 2; Asthma,None,None,119750,1350000,781,350000
+NEW-0329,40.1,Female,Mechanic,Class II (Moderate Risk),66.0,210.8,34.0,126,86,158,45,93,Never,Moderate (3-7/week),Light (1-2/week),None,Heart Disease; Alzheimer's,None,77580,1050000,644,200000
+NEW-0330,51.7,Male,Mechanic,Class II (Moderate Risk),64.0,195.4,33.5,148,79,188,51,117,Former (>5 years),Heavy (>7/week),Light (1-2/week),None,None,None,109266,1650000,665,500000
+NEW-0331,63.3,Female,Warehouse Worker,Class III (High Risk),65.2,159.7,26.4,142,67,197,49,129,Former (>5 years),Light (1-2/week),Light (1-2/week),Asthma,None,None,82467,800000,615,0
+NEW-0332,34.3,Female,Mechanic,Class II (Moderate Risk),61.8,137.4,25.3,114,72,145,58,67,Never,Moderate (3-7/week),Light (1-2/week),None,Alzheimer's; Heart Disease,None,36671,500000,597,0
+NEW-0333,56.5,Male,Truck Driver,Class III (High Risk),66.0,134.7,21.7,138,77,218,44,154,Never,Light (1-2/week),Sedentary,None,Cancer,None,66238,600000,737,0
+NEW-0334,29.5,Male,Chef,Class II (Moderate Risk),67.0,136.9,21.4,105,60,159,66,73,Former (<5 years),Moderate (3-7/week),Active (5+/week),None,None,None,40315,350000,560,0
+NEW-0335,46.1,Female,Designer,Class I (Low Risk),57.9,122.3,25.6,130,66,204,54,130,Never,Moderate (3-7/week),Sedentary,None,Diabetes,None,103093,1250000,632,0
+NEW-0336,56.4,Female,Teacher,Class I (Low Risk),62.6,138.8,24.9,135,65,180,55,105,Former (>5 years),None,Moderate (3-4/week),None,None,None,103840,1000000,710,0
+NEW-0337,44.6,Female,Plumber,Class II (Moderate Risk),59.0,84.2,17.0,110,62,195,80,95,Never,Light (1-2/week),Light (1-2/week),None,None,None,66508,700000,618,0
+NEW-0338,62.1,Male,Factory Worker,Class III (High Risk),68.1,270.8,41.0,142,87,279,35,224,Former (>5 years),Light (1-2/week),Moderate (3-4/week),High Cholesterol,None,None,89844,800000,716,0
+NEW-0339,44.4,Male,Construction Worker,Class III (High Risk),67.5,136.7,21.1,119,64,189,66,102,Former (<5 years),Light (1-2/week),Sedentary,Asthma,None,None,46332,500000,693,0
+NEW-0340,45.3,Female,Software Engineer,Class I (Low Risk),66.8,150.0,23.6,132,76,192,56,116,Current,None,Active (5+/week),Diabetes Type 2; Thyroid Disorder,None,None,113454,1350000,755,0
+NEW-0341,58.3,Male,Sales Rep,Class II (Moderate Risk),69.0,162.7,24.0,122,65,170,64,86,Current,None,Sedentary,Hypertension,None,None,108576,1400000,715,450000
+NEW-0342,25.6,Female,Manager,Class I (Low Risk),61.7,112.9,20.8,98,60,143,62,61,Never,None,Light (1-2/week),None,Cancer,None,30000,400000,589,0
+NEW-0343,63.2,Female,Mechanic,Class II (Moderate Risk),67.2,202.2,31.5,133,91,202,56,126,Never,None,Light (1-2/week),Hypertension,None,None,124395,1600000,675,400000
+NEW-0344,21.4,Male,Construction Worker,Class III (High Risk),69.6,117.4,17.0,103,64,151,66,65,Former (>5 years),Light (1-2/week),Light (1-2/week),None,None,None,30000,350000,609,0
+NEW-0345,49.5,Female,Analyst,Class I (Low Risk),59.6,126.6,25.0,130,88,198,53,125,Former (>5 years),Light (1-2/week),Light (1-2/week),None,None,None,124027,1250000,664,200000
+NEW-0346,62.0,Female,Construction Worker,Class III (High Risk),63.7,149.5,25.9,117,69,200,72,108,Never,Light (1-2/week),Light (1-2/week),None,None,None,97992,800000,700,350000
+NEW-0347,53.3,Male,Chef,Class II (Moderate Risk),64.5,139.6,23.6,138,60,176,59,97,Former (<5 years),None,Light (1-2/week),None,Alzheimer's,None,102600,1450000,793,300000
+NEW-0348,47.0,Male,Designer,Class I (Low Risk),65.2,138.2,22.8,133,63,179,65,94,Never,Moderate (3-7/week),Sedentary,Diabetes Type 2,None,None,104417,900000,700,0
+NEW-0349,26.7,Male,Chef,Class II (Moderate Risk),64.0,112.5,19.3,94,60,147,79,48,Former (<5 years),None,Light (1-2/week),None,Diabetes,None,49316,500000,641,200000
+NEW-0350,53.1,Female,Plumber,Class II (Moderate Risk),57.2,120.8,26.0,122,60,204,36,147,Former (>5 years),Light (1-2/week),Sedentary,Asthma; Arthritis,None,None,95996,1350000,672,300000
+NEW-0351,34.4,Male,Construction Worker,Class III (High Risk),69.9,152.1,21.9,117,71,188,58,110,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,35261,350000,612,0
+NEW-0352,54.1,Male,Manager,Class I (Low Risk),65.2,166.0,27.5,123,78,197,43,133,Never,Light (1-2/week),Moderate (3-4/week),Hypertension,None,None,162290,1450000,725,0
+NEW-0353,18.0,Female,Chef,Class II (Moderate Risk),61.2,136.8,25.6,118,74,159,63,76,Current,Light (1-2/week),Sedentary,None,None,None,30000,250000,595,0
+NEW-0354,29.5,Male,Electrician,Class II (Moderate Risk),66.2,106.0,17.0,107,60,162,48,94,Former (>5 years),Moderate (3-7/week),Moderate (3-4/week),None,None,None,47687,650000,738,0
+NEW-0355,42.7,Male,Accountant,Class I (Low Risk),65.2,147.2,24.4,91,65,182,57,104,Never,None,Active (5+/week),None,None,None,116355,1250000,689,200000
+NEW-0356,31.2,Male,Truck Driver,Class III (High Risk),61.4,140.3,26.2,110,69,207,57,130,Never,Heavy (>7/week),Light (1-2/week),None,None,None,30000,250000,621,0
+NEW-0357,42.1,Female,Accountant,Class I (Low Risk),59.8,140.8,27.7,127,85,190,47,123,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,104444,950000,655,0
+NEW-0358,60.5,Female,Manager,Class I (Low Risk),64.3,141.0,24.0,131,74,201,53,128,Current,Heavy (>7/week),Light (1-2/week),High Cholesterol,Diabetes,None,137399,1550000,697,350000
+NEW-0359,47.9,Male,Designer,Class I (Low Risk),64.2,126.6,21.6,141,64,189,40,129,Never,Light (1-2/week),Sedentary,None,None,Skiing,105691,1000000,714,450000
+NEW-0360,49.7,Female,Mechanic,Class II (Moderate Risk),59.1,111.1,22.4,132,60,195,59,116,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,64772,900000,690,0
+NEW-0361,54.3,Female,Plumber,Class II (Moderate Risk),63.7,154.3,26.7,121,69,201,65,116,Never,None,Sedentary,None,None,None,105387,900000,675,0
+NEW-0362,41.2,Female,Accountant,Class I (Low Risk),64.4,134.0,22.7,119,60,161,73,67,Former (>5 years),Moderate (3-7/week),Moderate (3-4/week),None,None,None,103892,1100000,685,0
+NEW-0363,50.4,Female,Plumber,Class II (Moderate Risk),65.1,154.5,25.7,138,74,157,48,89,Never,Light (1-2/week),Light (1-2/week),None,None,None,81926,1050000,766,0
+NEW-0364,46.4,Female,Chef,Class II (Moderate Risk),68.1,155.6,23.6,125,69,174,47,107,Never,Light (1-2/week),Moderate (3-4/week),None,Stroke,None,82818,750000,633,0
+NEW-0365,46.7,Female,Analyst,Class I (Low Risk),62.7,155.6,27.8,118,70,187,50,117,Former (>5 years),None,Light (1-2/week),None,None,None,120520,1500000,614,350000
+NEW-0366,22.4,Female,Police Officer,Class IV (Very High Risk),63.0,161.6,28.6,118,78,197,39,137,Former (>5 years),Moderate (3-7/week),Moderate (3-4/week),None,Stroke,None,30000,400000,555,0
+NEW-0367,32.6,Male,Chef,Class II (Moderate Risk),61.9,101.8,18.7,116,69,170,49,101,Never,Light (1-2/week),Light (1-2/week),None,None,None,48451,650000,578,400000
+NEW-0368,61.2,Female,Software Engineer,Class I (Low Risk),65.9,126.2,20.4,130,62,197,65,113,Never,Moderate (3-7/week),Moderate (3-4/week),None,None,None,93540,800000,789,0
+NEW-0369,58.3,Male,Construction Worker,Class III (High Risk),64.7,155.1,26.1,137,60,207,59,128,Former (<5 years),Light (1-2/week),Moderate (3-4/week),None,Heart Disease,None,109939,1300000,664,0
+NEW-0370,48.6,Male,Sales Rep,Class II (Moderate Risk),69.9,145.8,21.0,127,60,170,40,110,Former (<5 years),Light (1-2/week),Sedentary,None,None,None,50512,400000,686,350000
+NEW-0371,57.9,Female,Factory Worker,Class III (High Risk),65.2,133.3,22.0,134,72,201,61,120,Never,Moderate (3-7/week),Moderate (3-4/week),None,None,None,85965,750000,693,0
+NEW-0372,40.6,Male,Plumber,Class II (Moderate Risk),67.4,172.0,26.6,116,75,187,53,114,Never,None,Light (1-2/week),None,Stroke,None,69139,1000000,676,150000
+NEW-0373,42.9,Female,Warehouse Worker,Class III (High Risk),63.7,175.1,30.4,134,80,228,55,153,Former (<5 years),Light (1-2/week),Light (1-2/week),None,Alzheimer's,None,101210,1000000,686,500000
+NEW-0374,29.2,Male,Logger,Class IV (Very High Risk),65.4,103.5,17.0,120,64,147,61,67,Never,Moderate (3-7/week),Moderate (3-4/week),None,Heart Disease,None,40573,400000,574,0
+NEW-0375,71.3,Female,Manager,Class I (Low Risk),64.5,168.7,28.5,138,66,179,66,94,Never,Moderate (3-7/week),Active (5+/week),Thyroid Disorder,None,None,150706,2000000,659,0
+NEW-0376,27.3,Male,Warehouse Worker,Class III (High Risk),68.8,164.1,24.4,109,74,143,71,51,Never,Light (1-2/week),Light (1-2/week),None,Stroke; Alzheimer's,None,30000,300000,621,0
+NEW-0377,47.9,Male,Truck Driver,Class III (High Risk),69.5,121.1,17.6,115,75,152,73,59,Never,Heavy (>7/week),Light (1-2/week),None,None,None,45997,550000,581,0
+NEW-0378,34.6,Female,Teacher,Class I (Low Risk),65.9,175.1,28.3,113,70,209,59,130,Never,Light (1-2/week),Active (5+/week),None,None,None,116204,1150000,632,400000
+NEW-0379,60.4,Male,Plumber,Class II (Moderate Risk),64.7,166.6,28.0,133,76,182,48,114,Never,Light (1-2/week),Active (5+/week),None,Heart Disease,None,96657,850000,674,250000
+NEW-0380,43.9,Female,Analyst,Class I (Low Risk),61.0,112.0,21.1,125,70,211,58,133,Never,Moderate (3-7/week),Moderate (3-4/week),None,Heart Disease,Scuba Diving,129075,1600000,622,200000
+NEW-0381,22.5,Female,Construction Worker,Class III (High Risk),62.9,107.3,19.1,99,60,171,54,97,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,35472,450000,642,0
+NEW-0382,54.1,Male,Electrician,Class II (Moderate Risk),66.4,149.7,23.9,139,84,197,64,114,Never,None,Light (1-2/week),None,None,None,107431,1000000,666,450000
+NEW-0383,46.4,Female,Logger,Class IV (Very High Risk),65.1,180.4,29.9,126,62,194,51,123,Current,None,Light (1-2/week),None,None,None,66578,900000,697,0
+NEW-0384,58.1,Female,Accountant,Class I (Low Risk),56.5,142.2,31.3,137,75,219,34,165,Former (>5 years),Light (1-2/week),Sedentary,None,None,None,124074,1450000,736,400000
+NEW-0385,51.5,Female,Plumber,Class II (Moderate Risk),63.0,143.5,25.4,127,74,236,40,176,Never,Light (1-2/week),Sedentary,None,None,None,80307,1000000,673,0
+NEW-0386,50.6,Male,Plumber,Class II (Moderate Risk),67.1,136.1,21.2,127,71,188,51,117,Never,None,Light (1-2/week),None,None,None,98378,1050000,728,0
+NEW-0387,55.1,Female,Construction Worker,Class III (High Risk),60.6,114.5,21.9,133,65,163,51,92,Never,Light (1-2/week),Sedentary,None,None,None,79901,750000,669,250000
+NEW-0388,42.7,Female,Chef,Class II (Moderate Risk),58.7,121.6,24.8,126,70,195,60,115,Former (>5 years),Light (1-2/week),Sedentary,None,Heart Disease,None,56828,800000,643,200000
+NEW-0389,48.8,Male,Construction Worker,Class III (High Risk),67.9,199.9,30.5,133,72,217,61,136,Never,Moderate (3-7/week),Moderate (3-4/week),High Cholesterol,None,None,78545,1200000,719,0
+NEW-0390,47.2,Male,Truck Driver,Class III (High Risk),65.5,172.6,28.3,119,82,185,43,121,Never,Light (1-2/week),Moderate (3-4/week),Asthma,None,None,62922,750000,687,250000
+NEW-0391,37.2,Male,Accountant,Class I (Low Risk),64.7,128.8,21.6,90,76,144,68,56,Never,Light (1-2/week),Light (1-2/week),None,None,None,107058,1050000,682,0
+NEW-0392,45.3,Female,Mechanic,Class II (Moderate Risk),63.8,178.1,30.8,150,60,212,49,143,Former (>5 years),Light (1-2/week),Moderate (3-4/week),Hypertension; Asthma,None,None,113583,1150000,688,0
+NEW-0393,36.5,Female,Software Engineer,Class I (Low Risk),61.4,122.0,22.7,95,60,146,30,96,Never,None,Light (1-2/week),None,None,None,97554,900000,681,500000
+NEW-0394,55.9,Male,Warehouse Worker,Class III (High Risk),63.8,160.9,27.8,130,64,192,40,132,Former (>5 years),Moderate (3-7/week),Light (1-2/week),None,None,Base Jumping,65444,750000,641,0
+NEW-0395,37.5,Male,Software Engineer,Class I (Low Risk),69.5,139.7,20.3,125,75,174,53,101,Former (<5 years),Moderate (3-7/week),Sedentary,None,None,None,74947,850000,607,0
+NEW-0396,53.2,Male,Logger,Class IV (Very High Risk),69.5,165.7,24.1,127,60,180,59,100,Never,Heavy (>7/week),Active (5+/week),Asthma,Alzheimer's,None,81511,800000,628,0
+NEW-0397,34.2,Male,Analyst,Class I (Low Risk),62.6,102.7,18.4,120,76,198,56,122,Never,Light (1-2/week),Moderate (3-4/week),None,Heart Disease,None,81491,1150000,669,400000
+NEW-0398,29.9,Male,Designer,Class I (Low Risk),64.6,114.1,19.2,124,60,186,51,116,Former (<5 years),None,Light (1-2/week),None,None,None,58838,500000,687,0
+NEW-0399,47.3,Male,Firefighter,Class IV (Very High Risk),64.9,106.3,17.7,112,81,166,33,113,Never,Light (1-2/week),Moderate (3-4/week),Diabetes Type 2,None,None,73375,700000,693,150000
+NEW-0400,41.7,Female,Warehouse Worker,Class III (High Risk),65.7,155.8,25.4,119,62,173,50,103,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,39485,550000,652,0
+NEW-0401,36.7,Female,Accountant,Class I (Low Risk),67.3,181.7,28.2,117,68,175,38,117,Never,Moderate (3-7/week),Moderate (3-4/week),None,Stroke,None,79707,800000,643,0
+NEW-0402,51.6,Female,Factory Worker,Class III (High Risk),69.4,155.9,22.7,115,77,132,46,66,Never,Light (1-2/week),Light (1-2/week),None,Diabetes; Heart Disease,Motorcycle Racing,100043,1250000,645,0
+NEW-0403,38.5,Male,Truck Driver,Class III (High Risk),67.0,165.8,26.0,120,68,176,52,104,Never,Moderate (3-7/week),Sedentary,None,None,None,44353,400000,588,350000
+NEW-0404,60.1,Male,Nurse,Class II (Moderate Risk),65.0,154.1,25.6,140,60,169,54,95,Never,Moderate (3-7/week),Sedentary,None,None,None,110060,1500000,642,400000
+NEW-0405,22.8,Female,Warehouse Worker,Class III (High Risk),59.5,111.2,22.1,117,65,126,44,62,Never,Light (1-2/week),Light (1-2/week),None,None,None,30000,400000,590,0
+NEW-0406,37.9,Female,Accountant,Class I (Low Risk),62.9,137.0,24.4,139,76,172,54,98,Current,Light (1-2/week),Active (5+/week),Hypertension,None,Rock Climbing,89113,1300000,627,350000
+NEW-0407,60.2,Female,Chef,Class II (Moderate Risk),67.7,178.8,27.4,147,69,213,66,127,Never,Light (1-2/week),Light (1-2/week),None,None,None,119528,1750000,777,150000
+NEW-0408,51.3,Female,Pilot,Class IV (Very High Risk),63.5,118.7,20.7,118,75,203,37,146,Never,Moderate (3-7/week),Moderate (3-4/week),Asthma,None,None,79301,1050000,691,0
+NEW-0409,47.3,Female,Software Engineer,Class I (Low Risk),61.7,165.9,30.6,137,89,192,37,136,Never,Heavy (>7/week),Moderate (3-4/week),None,None,None,111702,1550000,761,0
+NEW-0410,47.3,Female,Analyst,Class I (Low Risk),65.8,163.4,26.5,112,62,180,52,108,Current,None,Light (1-2/week),None,None,None,124352,1200000,656,0
+NEW-0411,18.0,Female,Designer,Class I (Low Risk),61.4,98.5,18.4,117,60,120,49,51,Current,Moderate (3-7/week),Sedentary,None,Heart Disease,None,51218,450000,498,0
+NEW-0412,52.0,Female,Mechanic,Class II (Moderate Risk),65.4,154.1,25.4,131,67,179,49,111,Never,Light (1-2/week),Sedentary,None,None,None,89152,1300000,759,300000
+NEW-0413,35.9,Female,Warehouse Worker,Class III (High Risk),66.3,118.7,19.0,113,64,120,59,41,Current,Light (1-2/week),Moderate (3-4/week),None,None,None,41170,450000,553,350000
+NEW-0414,47.7,Female,Mechanic,Class II (Moderate Risk),67.2,158.8,24.7,134,87,187,57,109,Never,None,Light (1-2/week),Asthma,Cancer,None,90208,1250000,704,250000
+NEW-0415,36.4,Male,Roofer,Class IV (Very High Risk),70.2,190.6,27.2,123,80,205,43,142,Former (>5 years),None,Light (1-2/week),None,None,None,58235,700000,665,0
+NEW-0416,57.8,Female,Chef,Class II (Moderate Risk),56.3,116.1,25.7,142,80,167,45,102,Never,Light (1-2/week),Sedentary,None,None,None,111758,1400000,697,0
+NEW-0417,42.2,Male,Sales Rep,Class II (Moderate Risk),67.1,146.6,22.9,116,72,195,57,119,Former (>5 years),Light (1-2/week),Light (1-2/week),None,Heart Disease,None,94036,800000,638,200000
+NEW-0418,45.9,Male,Software Engineer,Class I (Low Risk),66.4,116.1,18.5,123,76,191,61,110,Never,Light (1-2/week),Light (1-2/week),Asthma,None,None,83983,1200000,691,350000
+NEW-0419,67.0,Female,Plumber,Class II (Moderate Risk),63.7,161.6,28.0,149,75,206,53,133,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,135944,1900000,769,200000
+NEW-0420,19.4,Male,Nurse,Class II (Moderate Risk),69.0,142.6,21.0,99,74,171,44,107,Never,Moderate (3-7/week),Moderate (3-4/week),None,None,None,39945,350000,636,500000
+NEW-0421,35.7,Female,Mechanic,Class II (Moderate Risk),64.6,133.9,22.5,116,64,165,62,82,Never,Light (1-2/week),Light (1-2/week),None,None,None,63150,650000,664,0
+NEW-0422,57.9,Female,Teacher,Class I (Low Risk),68.8,156.0,23.1,141,75,196,59,117,Never,Moderate (3-7/week),Moderate (3-4/week),None,Cancer; Diabetes,None,128802,1550000,646,100000
+NEW-0423,54.9,Male,Designer,Class I (Low Risk),68.7,181.4,27.0,114,73,207,73,114,Never,None,Light (1-2/week),Asthma,None,None,130658,1400000,635,450000
+NEW-0424,51.2,Female,Designer,Class I (Low Risk),67.5,154.8,23.9,109,85,191,50,121,Former (>5 years),Moderate (3-7/week),Light (1-2/week),None,Heart Disease; Diabetes,None,129395,1350000,660,0
+NEW-0425,33.7,Female,Plumber,Class II (Moderate Risk),62.9,132.2,23.5,110,71,188,55,112,Never,Light (1-2/week),Light (1-2/week),None,None,None,54520,450000,659,0
+NEW-0426,52.1,Male,Software Engineer,Class I (Low Risk),63.8,174.8,30.2,138,68,169,55,94,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,122713,1350000,706,0
+NEW-0427,61.6,Male,Software Engineer,Class I (Low Risk),66.9,180.1,28.3,139,70,221,67,134,Former (>5 years),Moderate (3-7/week),Light (1-2/week),None,None,None,131917,1400000,646,450000
+NEW-0428,35.5,Male,Accountant,Class I (Low Risk),67.2,109.2,17.0,106,64,175,69,86,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,91249,1200000,640,0
+NEW-0429,40.2,Male,Electrician,Class II (Moderate Risk),66.8,169.9,26.7,127,69,212,51,141,Never,Light (1-2/week),Sedentary,Arthritis,Stroke,None,86663,1300000,636,200000
+NEW-0430,31.7,Male,Analyst,Class I (Low Risk),67.2,109.3,17.0,107,70,175,72,83,Former (<5 years),None,Moderate (3-4/week),None,Diabetes,None,67814,550000,585,0
+NEW-0431,52.9,Male,Truck Driver,Class III (High Risk),64.8,156.9,26.3,117,67,185,54,111,Never,None,Sedentary,Thyroid Disorder; Diabetes Type 2,Alzheimer's; Stroke,None,84013,900000,687,200000
+NEW-0432,47.7,Male,Pilot,Class IV (Very High Risk),68.4,155.1,23.3,127,77,161,46,96,Former (>5 years),Moderate (3-7/week),Moderate (3-4/week),None,None,None,90954,1300000,702,300000
+NEW-0433,41.1,Male,Warehouse Worker,Class III (High Risk),68.8,149.1,22.1,118,67,180,70,89,Never,Light (1-2/week),Light (1-2/week),None,None,None,99362,1100000,607,0
+NEW-0434,38.2,Male,Accountant,Class I (Low Risk),64.9,172.3,28.7,134,76,180,55,105,Former (>5 years),Light (1-2/week),Active (5+/week),None,None,None,67567,900000,669,0
+NEW-0435,49.7,Male,Truck Driver,Class III (High Risk),65.6,171.9,28.1,125,60,221,71,131,Never,Light (1-2/week),Light (1-2/week),None,None,None,58896,600000,670,0
+NEW-0436,62.9,Male,Teacher,Class I (Low Risk),63.0,104.3,18.4,124,71,213,80,113,Never,Light (1-2/week),Moderate (3-4/week),None,None,Skiing,150900,1450000,661,500000
+NEW-0437,50.4,Male,Teacher,Class I (Low Risk),66.6,182.2,28.9,109,79,230,55,155,Former (>5 years),Light (1-2/week),Moderate (3-4/week),Thyroid Disorder,Cancer,Motorcycle Racing,133386,1850000,729,0
+NEW-0438,19.1,Male,Electrician,Class II (Moderate Risk),67.5,140.7,21.7,96,65,126,57,49,Never,Light (1-2/week),Active (5+/week),None,None,None,34823,400000,683,0
+NEW-0439,34.2,Male,Teacher,Class I (Low Risk),69.2,121.0,17.8,123,64,174,50,105,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,91386,1350000,620,0
+NEW-0440,43.5,Male,Electrician,Class II (Moderate Risk),63.7,130.3,22.6,123,68,205,50,134,Never,Light (1-2/week),Active (5+/week),Thyroid Disorder,None,None,100921,900000,654,0
+NEW-0441,64.6,Male,Software Engineer,Class I (Low Risk),68.0,233.1,35.4,142,65,218,50,148,Former (>5 years),Light (1-2/week),Light (1-2/week),None,None,None,168616,1550000,673,300000
+NEW-0442,34.2,Male,Plumber,Class II (Moderate Risk),67.7,155.5,23.9,129,60,161,64,77,Never,Light (1-2/week),Active (5+/week),None,None,None,57375,700000,655,100000
+NEW-0443,43.4,Male,Designer,Class I (Low Risk),70.1,149.4,21.4,116,67,163,58,85,Never,Moderate (3-7/week),Sedentary,None,Heart Disease,None,95320,1100000,677,0
+NEW-0444,48.2,Female,Nurse,Class II (Moderate Risk),61.8,146.1,26.9,128,66,210,55,135,Former (>5 years),Light (1-2/week),Light (1-2/week),Hypertension,Stroke,None,102459,900000,734,0
+NEW-0445,31.9,Male,Construction Worker,Class III (High Risk),72.1,180.9,24.5,119,61,181,33,128,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,30000,400000,534,0
+NEW-0446,43.3,Female,Sales Rep,Class II (Moderate Risk),68.1,165.1,25.0,128,67,185,37,128,Former (<5 years),None,Light (1-2/week),None,None,None,92464,850000,683,400000
+NEW-0447,54.4,Male,Sales Rep,Class II (Moderate Risk),68.0,156.9,23.8,131,68,190,67,103,Former (<5 years),Light (1-2/week),Light (1-2/week),None,None,None,113919,1300000,677,0
+NEW-0448,49.5,Male,Truck Driver,Class III (High Risk),70.2,133.6,19.0,121,68,144,48,76,Never,Light (1-2/week),Light (1-2/week),None,Cancer,Motorcycle Racing,60677,650000,654,0
+NEW-0449,47.6,Male,Construction Worker,Class III (High Risk),62.7,121.9,21.8,119,83,170,56,94,Former (>5 years),Light (1-2/week),Sedentary,None,None,None,79883,700000,735,0
+NEW-0450,46.8,Male,Designer,Class I (Low Risk),72.3,137.6,18.5,125,60,169,54,96,Never,Moderate (3-7/week),Moderate (3-4/week),None,None,None,92628,1150000,714,150000
+NEW-0451,33.1,Female,Nurse,Class II (Moderate Risk),62.0,117.8,21.5,107,68,132,48,64,Former (<5 years),Light (1-2/week),Moderate (3-4/week),None,None,None,44762,500000,584,250000
+NEW-0452,61.5,Female,Logger,Class IV (Very High Risk),62.7,138.5,24.8,132,80,186,58,108,Never,None,Active (5+/week),None,None,None,88781,1100000,710,0
+NEW-0453,44.5,Female,Nurse,Class II (Moderate Risk),60.8,91.0,17.3,128,73,181,72,89,Never,Light (1-2/week),Active (5+/week),None,None,None,87070,950000,625,0
+NEW-0454,47.4,Female,Teacher,Class I (Low Risk),68.6,150.2,22.4,119,72,213,63,130,Never,Light (1-2/week),Moderate (3-4/week),Diabetes Type 2; Asthma,None,None,96956,1000000,678,0
+NEW-0455,46.2,Male,Analyst,Class I (Low Risk),69.0,128.0,18.9,105,66,174,50,105,Never,Light (1-2/week),Moderate (3-4/week),None,Heart Disease,None,108562,1400000,678,0
+NEW-0456,67.0,Female,Designer,Class I (Low Risk),62.8,128.5,22.9,146,68,208,67,120,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,174373,2600000,757,0
+NEW-0457,31.0,Female,Mechanic,Class II (Moderate Risk),65.2,131.2,21.7,102,73,185,70,95,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,55256,800000,553,0
+NEW-0458,67.5,Male,Warehouse Worker,Class III (High Risk),62.8,134.9,24.1,128,78,196,62,114,Never,Heavy (>7/week),Moderate (3-4/week),None,Cancer,None,98066,1450000,705,450000
+NEW-0459,55.9,Male,Designer,Class I (Low Risk),70.4,204.7,29.1,136,68,187,61,106,Never,Light (1-2/week),Light (1-2/week),Asthma,None,None,127994,1300000,670,0
+NEW-0460,55.7,Female,Designer,Class I (Low Risk),62.2,173.4,31.5,128,68,196,49,127,Never,Light (1-2/week),Light (1-2/week),Asthma,Alzheimer's,None,135519,1300000,704,100000
+NEW-0461,64.5,Female,Warehouse Worker,Class III (High Risk),63.7,133.1,23.0,133,88,197,39,139,Never,Light (1-2/week),Light (1-2/week),Asthma; Thyroid Disorder,Diabetes,None,95959,1350000,720,0
+NEW-0462,22.3,Female,Pilot,Class IV (Very High Risk),68.9,129.6,19.2,90,82,186,52,114,Never,None,Active (5+/week),None,None,None,30000,250000,586,0
+NEW-0463,64.7,Male,Designer,Class I (Low Risk),67.0,137.7,21.5,143,76,167,50,97,Never,None,Sedentary,Asthma; Thyroid Disorder,Alzheimer's; Diabetes,None,141891,1750000,724,150000
+NEW-0464,56.1,Female,Warehouse Worker,Class III (High Risk),67.3,176.7,27.4,141,76,179,54,105,Never,Moderate (3-7/week),Sedentary,High Cholesterol; Asthma,Diabetes,None,84418,900000,731,0
+NEW-0465,36.7,Female,Teacher,Class I (Low Risk),65.0,123.2,20.5,99,66,176,68,89,Former (<5 years),Light (1-2/week),Light (1-2/week),None,None,None,99203,900000,604,0
+NEW-0466,44.7,Female,Truck Driver,Class III (High Risk),60.8,110.1,20.9,122,71,146,60,66,Former (>5 years),Light (1-2/week),Sedentary,None,Alzheimer's,None,73874,900000,611,0
+NEW-0467,43.4,Male,Designer,Class I (Low Risk),63.8,98.4,17.0,126,73,165,63,82,Never,None,Light (1-2/week),None,None,None,84927,1200000,694,0
+NEW-0468,47.1,Female,Nurse,Class II (Moderate Risk),60.3,133.4,25.8,128,66,159,50,89,Never,Light (1-2/week),Light (1-2/week),None,None,None,101115,1400000,702,0
+NEW-0469,48.8,Male,Mechanic,Class II (Moderate Risk),64.9,134.9,22.5,113,70,188,68,101,Never,None,Light (1-2/week),None,None,None,65201,550000,651,0
+NEW-0470,37.0,Male,Software Engineer,Class I (Low Risk),67.1,164.9,25.7,112,73,193,52,121,Never,Moderate (3-7/week),Light (1-2/week),Arthritis,None,None,103160,1550000,675,0
+NEW-0471,36.8,Female,Nurse,Class II (Moderate Risk),61.7,143.4,26.5,114,73,160,64,76,Never,None,Light (1-2/week),None,None,None,39774,400000,560,0
+NEW-0472,39.3,Male,Teacher,Class I (Low Risk),70.8,197.0,27.6,129,73,172,39,113,Never,Moderate (3-7/week),Active (5+/week),None,Stroke,None,113561,950000,711,300000
+NEW-0473,33.3,Female,Mechanic,Class II (Moderate Risk),64.6,129.0,21.7,104,60,176,55,101,Current,Moderate (3-7/week),Sedentary,None,None,None,49852,400000,617,300000
+NEW-0474,44.1,Female,Electrician,Class II (Moderate Risk),65.0,174.0,29.0,135,77,184,46,118,Never,Light (1-2/week),Light (1-2/week),None,None,None,68096,550000,688,0
+NEW-0475,54.2,Female,Designer,Class I (Low Risk),58.9,146.1,29.6,133,73,225,55,149,Never,Light (1-2/week),Light (1-2/week),None,Diabetes,None,110082,1550000,663,200000
+NEW-0476,47.7,Male,Teacher,Class I (Low Risk),67.5,176.0,27.1,149,80,174,55,100,Never,Heavy (>7/week),Moderate (3-4/week),None,None,None,105966,1500000,689,400000
+NEW-0477,33.1,Female,Construction Worker,Class III (High Risk),59.7,86.4,17.1,90,60,203,54,129,Never,Light (1-2/week),Light (1-2/week),None,None,None,50661,500000,578,0
+NEW-0478,35.3,Male,Plumber,Class II (Moderate Risk),64.0,118.3,20.3,114,74,196,64,112,Never,Light (1-2/week),Moderate (3-4/week),None,Cancer,None,71687,950000,621,0
+NEW-0479,69.9,Female,Accountant,Class I (Low Risk),61.7,150.2,27.7,133,83,203,55,127,Current,Light (1-2/week),Light (1-2/week),High Cholesterol,None,None,168888,1900000,712,150000
+NEW-0480,52.2,Male,Factory Worker,Class III (High Risk),68.0,145.4,22.1,118,68,190,71,99,Current,Light (1-2/week),Moderate (3-4/week),Thyroid Disorder; Arthritis,None,None,111437,900000,660,0
+NEW-0481,75.0,Female,Teacher,Class I (Low Risk),62.6,201.4,36.1,161,71,204,51,133,Never,Light (1-2/week),Active (5+/week),Thyroid Disorder,None,None,178576,1550000,770,0
+NEW-0482,45.5,Female,Teacher,Class I (Low Risk),65.3,109.8,18.1,118,60,165,46,100,Never,None,Light (1-2/week),None,None,None,86426,950000,677,500000
+NEW-0483,43.4,Female,Accountant,Class I (Low Risk),68.9,152.0,22.5,127,77,183,59,105,Former (>5 years),Moderate (3-7/week),Active (5+/week),None,None,None,120207,1250000,730,0
+NEW-0484,52.3,Male,Software Engineer,Class I (Low Risk),71.2,188.3,26.1,116,73,181,67,94,Former (<5 years),Light (1-2/week),Sedentary,Diabetes Type 2,None,None,115473,1300000,728,0
+NEW-0485,35.4,Male,Teacher,Class I (Low Risk),63.9,127.4,22.0,102,72,197,62,114,Current,Moderate (3-7/week),Moderate (3-4/week),None,Alzheimer's,None,106722,1600000,682,0
+NEW-0486,40.0,Female,Mechanic,Class II (Moderate Risk),64.3,141.4,24.0,131,68,158,42,96,Never,None,Light (1-2/week),None,None,None,67261,900000,646,350000
+NEW-0487,29.0,Male,Truck Driver,Class III (High Risk),70.4,148.4,21.1,120,60,184,47,117,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,30000,400000,586,100000
+NEW-0488,41.7,Female,Warehouse Worker,Class III (High Risk),67.3,162.4,25.2,111,60,187,52,115,Never,Light (1-2/week),Moderate (3-4/week),None,None,None,66472,950000,581,0
+NEW-0489,71.8,Female,Designer,Class I (Low Risk),58.9,135.2,27.4,130,65,225,52,153,Current,Light (1-2/week),Light (1-2/week),None,None,None,141282,1200000,726,100000
+NEW-0490,52.9,Male,Factory Worker,Class III (High Risk),69.9,220.9,31.8,135,69,193,57,116,Former (>5 years),Light (1-2/week),Sedentary,None,None,None,105631,1250000,610,400000
+NEW-0491,44.8,Female,Firefighter,Class IV (Very High Risk),60.2,126.4,24.5,139,60,152,70,61,Never,Light (1-2/week),Moderate (3-4/week),None,Diabetes,None,79458,1050000,659,0
+NEW-0492,55.9,Male,Truck Driver,Class III (High Risk),72.3,200.4,27.0,129,60,181,35,125,Never,Light (1-2/week),Active (5+/week),None,None,Rock Climbing,92247,950000,745,150000
+NEW-0493,40.0,Male,Teacher,Class I (Low Risk),68.4,179.5,27.0,126,68,159,61,78,Never,Light (1-2/week),Light (1-2/week),None,None,None,112874,1100000,668,250000
+NEW-0494,41.0,Male,Accountant,Class I (Low Risk),69.4,171.7,25.0,137,65,198,59,119,Never,Light (1-2/week),Moderate (3-4/week),None,Cancer,None,97647,950000,637,0
+NEW-0495,54.1,Female,Mechanic,Class II (Moderate Risk),68.8,118.6,17.6,123,73,162,63,78,Never,Moderate (3-7/week),Light (1-2/week),None,None,None,103534,1500000,719,150000
+NEW-0496,40.9,Male,Factory Worker,Class III (High Risk),63.0,134.3,23.7,132,75,154,54,80,Former (<5 years),Light (1-2/week),Sedentary,None,None,None,60199,500000,666,0
+NEW-0497,43.8,Female,Sales Rep,Class II (Moderate Risk),63.5,124.7,21.7,143,60,179,58,101,Never,Light (1-2/week),Light (1-2/week),Diabetes Type 2,None,None,87328,1100000,645,0
+NEW-0498,39.8,Female,Software Engineer,Class I (Low Risk),65.6,134.6,22.0,111,76,155,49,86,Never,Light (1-2/week),Light (1-2/week),None,None,None,99962,1450000,689,0
+NEW-0499,42.1,Female,Plumber,Class II (Moderate Risk),65.4,150.0,24.6,118,60,203,45,137,Never,Light (1-2/week),Light (1-2/week),None,None,None,114504,1100000,651,0
+NEW-0500,64.2,Female,Manager,Class I (Low Risk),67.3,167.2,26.0,143,81,197,37,139,Former (>5 years),Heavy (>7/week),Moderate (3-4/week),Diabetes Type 2; Hypertension,None,None,120784,1700000,743,0

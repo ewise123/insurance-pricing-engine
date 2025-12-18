@@ -1,0 +1,37 @@
+# Environment variables (contains API keys)
+.env
+
+# AI Cache directory
+.ai_cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+api.log
+api.pid
+
+# Temporary files
+*.tmp
+temp/

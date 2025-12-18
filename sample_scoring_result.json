@@ -1,0 +1,173 @@
+{
+  "customer_id": "NEW-0001",
+  "final_risk_score": 0.4705,
+  "pricing": {
+    "low": 7067.77,
+    "recommended": 9063.38,
+    "high": 10393.78
+  },
+  "scoring_steps": [
+    {
+      "category": "Demographics",
+      "factor": "Age",
+      "value": "57.4 years",
+      "risk_contribution": 0.4,
+      "weight": 0.2,
+      "weighted_score": 0.08,
+      "explanation": "Customer age of 57.4 places them in the 50-59 bracket. Mortality risk increases with age - this age bracket has a base risk factor of 0.40. Actuarial tables show mortality rates increase exponentially after age 50. In our historical data, customers aged 52-62 (n=1945) had an average risk score of 0.398 with a 0.21% claim rate.",
+      "supporting_data": {
+        "cohort_size": 1945,
+        "avg_risk_score": 0.398,
+        "claim_rate": 0.21
+      }
+    },
+    {
+      "category": "Demographics",
+      "factor": "Gender",
+      "value": "Female",
+      "risk_contribution": 0.45,
+      "weight": 0.05,
+      "weighted_score": 0.0225,
+      "explanation": "Gender: Female. Actuarial data consistently shows males have 10-15% higher mortality rates across most age groups due to higher rates of heart disease, accidents, and risky behaviors. This results in a risk factor of 0.45. Historical female customers (n=4991) average a 0.341 risk score.",
+      "supporting_data": {
+        "cohort_size": 4991,
+        "avg_risk_score": 0.341,
+        "avg_premium": 4511.55
+      }
+    },
+    {
+      "category": "Demographics",
+      "factor": "Occupation",
+      "value": "Designer (Class I (Low Risk))",
+      "risk_contribution": 0.2,
+      "weight": 0.1,
+      "weighted_score": 0.02,
+      "explanation": "Occupation: Designer (Class I (Low Risk)). Occupational mortality varies significantly based on workplace hazards, stress levels, and accident risk. This occupation class carries a 0.20 risk factor. Class I (Low Risk) workers in our data (n=3971) show 0.13% claim rates.",
+      "supporting_data": {
+        "cohort_size": 3971,
+        "avg_risk_score": 0.322,
+        "claim_rate": 0.13
+      }
+    },
+    {
+      "category": "Health Metrics",
+      "factor": "Body Mass Index (BMI)",
+      "value": "28.4 (Overweight)",
+      "risk_contribution": 0.4,
+      "weight": 0.15,
+      "weighted_score": 0.06,
+      "explanation": "BMI: 28.4 (Overweight). Body Mass Index is strongly correlated with mortality risk. Both underweight and overweight conditions increase mortality through different mechanisms (malnutrition vs. cardiovascular disease, diabetes). This BMI level carries a 0.40 risk factor. Customers with similar BMI (n=2324) have 100.0% chronic condition rates.",
+      "supporting_data": {
+        "cohort_size": 2324,
+        "avg_risk_score": 0.385,
+        "chronic_condition_rate": 100.0
+      }
+    },
+    {
+      "category": "Health Metrics",
+      "factor": "Blood Pressure",
+      "value": "125/70 mmHg (Elevated)",
+      "risk_contribution": 0.3,
+      "weight": 0.1,
+      "weighted_score": 0.03,
+      "explanation": "Blood Pressure: 125/70 mmHg (Elevated). Hypertension is a leading risk factor for heart disease, stroke, and kidney disease. The American Heart Association defines stages based on systolic readings. This reading indicates elevated blood pressure with a 0.30 risk factor. Customers with similar BP (n=5813) average 0.347 risk scores.",
+      "supporting_data": {
+        "cohort_size": 5813,
+        "avg_risk_score": 0.347
+      }
+    },
+    {
+      "category": "Health Metrics",
+      "factor": "Cholesterol",
+      "value": "204 mg/dL (Borderline High)",
+      "risk_contribution": 0.5,
+      "weight": 0.08,
+      "weighted_score": 0.04,
+      "explanation": "Total Cholesterol: 204 mg/dL (HDL: 52, LDL: 132) - Borderline High. High cholesterol is a major risk factor for atherosclerosis and coronary artery disease. LDL ('bad' cholesterol) should be <100 mg/dL ideally, HDL ('good' cholesterol) should be >40 mg/dL. This profile indicates borderline high risk with a 0.50 factor. Similar cholesterol profiles (n=4653) average 0.369 risk.",
+      "supporting_data": {
+        "cohort_size": 4653,
+        "avg_risk_score": 0.369
+      }
+    },
+    {
+      "category": "Lifestyle",
+      "factor": "Smoking Status",
+      "value": "Former (<5 years)",
+      "risk_contribution": 0.5,
+      "weight": 0.15,
+      "weighted_score": 0.075,
+      "explanation": "Smoking Status: Former (<5 years). Smoking is THE single largest modifiable risk factor for mortality. Current smokers have 2-3x higher mortality rates than non-smokers due to cancer, heart disease, and respiratory illness. This status carries a 0.50 risk factor (15% of total score). Former (<5 years) customers (n=1133) average $4,400 annual premiums.",
+      "supporting_data": {
+        "cohort_size": 1133,
+        "avg_risk_score": 0.369,
+        "avg_premium": 4400.4
+      }
+    },
+    {
+      "category": "Lifestyle",
+      "factor": "Alcohol Consumption",
+      "value": "Heavy (>7/week)",
+      "risk_contribution": 0.8,
+      "weight": 0.05,
+      "weighted_score": 0.04,
+      "explanation": "Alcohol Consumption: Heavy (>7/week). Heavy alcohol use increases mortality through liver disease, accidents, and cardiovascular issues. Moderate consumption shows J-curved mortality (slight benefit vs. none, but heavy use is harmful). This consumption level has a 0.80 risk factor. Customers with heavy (>7/week) consumption (n=506) average 0.369 risk.",
+      "supporting_data": {
+        "cohort_size": 506,
+        "avg_risk_score": 0.369
+      }
+    },
+    {
+      "category": "Lifestyle",
+      "factor": "Exercise Frequency",
+      "value": "Active (5+/week)",
+      "risk_contribution": 0.15,
+      "weight": 0.04,
+      "weighted_score": 0.006,
+      "explanation": "Exercise Frequency: Active (5+/week). Regular physical activity is strongly protective against all-cause mortality, reducing risk by 20-30%. Exercise improves cardiovascular health, maintains healthy weight, and reduces chronic disease risk. This activity level has a 0.15 risk factor. Active (5+/week) customers (n=1553) have average BMI of 24.3.",
+      "supporting_data": {
+        "cohort_size": 1553,
+        "avg_risk_score": 0.33,
+        "avg_bmi": 24.3
+      }
+    },
+    {
+      "category": "Medical History",
+      "factor": "Chronic Conditions",
+      "value": "Arthritis",
+      "risk_contribution": 0.6000000000000001,
+      "weight": 0.1,
+      "weighted_score": 0.06,
+      "explanation": "Chronic Conditions: Arthritis. Presence of 1 chronic condition(s) significantly increases mortality risk. Each condition adds compounding risk through disease progression and comorbidity effects. Risk factor: 0.60. Customers with similar condition profiles (n=1643) have 0.18% claim rates.",
+      "supporting_data": {
+        "cohort_size": 1643,
+        "avg_risk_score": 0.41,
+        "claim_rate": 0.18
+      }
+    },
+    {
+      "category": "Medical History",
+      "factor": "Family History",
+      "value": "None",
+      "risk_contribution": 0.2,
+      "weight": 0.05,
+      "weighted_score": 0.01,
+      "explanation": "Family History: None. No significant family history reported. Risk factor: 0.20.",
+      "supporting_data": {}
+    },
+    {
+      "category": "Lifestyle",
+      "factor": "Dangerous Hobbies",
+      "value": "Skydiving",
+      "risk_contribution": 0.9,
+      "weight": 0.03,
+      "weighted_score": 0.027,
+      "explanation": "Dangerous Hobbies: Skydiving. Participation in skydiving significantly increases accident and fatality risk. These activities carry substantially higher mortality rates than general population. Risk factor: 0.90. Customers with dangerous hobbies (n=10000) average 0.344 risk.",
+      "supporting_data": {
+        "cohort_size": 10000,
+        "avg_risk_score": 0.344
+      }
+    }
+  ],
+  "summary": "EXECUTIVE SUMMARY - Customer NEW-0001\n======================================================================\n\nRISK ASSESSMENT: Average Risk - Standard\nFinal Risk Score: 0.4705 (0 = lowest risk, 1 = highest risk)\n\nPRICING RECOMMENDATION:\n  \u2022 Recommended Annual Premium: $9,063.38\n  \u2022 Price Range: $7,067.77 - $10,393.78\n  \u2022 Coverage Amount: $1,450,000\n\nCUSTOMER PROFILE:\n  \u2022 Age: 57 | Gender: Female | Occupation: Designer\n  \u2022 BMI: 28.4 | BP: 125/70\n  \u2022 Smoking: Former (<5 years)\n\nTOP RISK FACTORS:\n  1. Age: 57.4 years (+0.0800 to risk score)\n  2. Smoking Status: Former (<5 years) (+0.0750 to risk score)\n  3. Body Mass Index (BMI): 28.4 (Overweight) (+0.0600 to risk score)\n\nPROTECTIVE FACTORS:\n  1. Exercise Frequency: Active (5+/week) (Low risk contribution: 0.0060)\n  2. Family History: None (Low risk contribution: 0.0100)\n\nUNDERWRITER NOTES:\nBased on the comprehensive risk assessment across 12 factors, this customer presents a \naverage risk - standard profile. The pricing recommendation of $9,063.38 annually \nprovides adequate margin while remaining competitive in the market.",
+  "confidence_level": "High"
+}
