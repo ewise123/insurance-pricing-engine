@@ -5,6 +5,7 @@ Now with AI-powered pattern analysis using Claude
 """
 
 from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Dict, Any, Optional
@@ -19,6 +20,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.getenv("DATA_DIR", BASE_DIR)
 DEFAULT_HISTORICAL_PATH = os.path.join(DATA_DIR, "historical_customers.csv")
 DEFAULT_NEW_CUSTOMERS_PATH = os.path.join(DATA_DIR, "new_customers.csv")
+FRONTEND_PATH = os.path.join(BASE_DIR, "frontend.html")
 
 # Load environment variables
 load_dotenv()
@@ -1194,6 +1196,37 @@ async def health_check():
         "ai_enabled": pattern_analyzer is not None,
         "ai_model": os.getenv('AI_MODEL', 'claude-sonnet-4-20250514') if pattern_analyzer else None
     }
+
+
+@app.get("/")
+async def serve_frontend():
+    """Serve the demo UI."""
+    if not os.path.exists(FRONTEND_PATH):
+        raise HTTPException(status_code=404, detail="frontend.html not found")
+    return FileResponse(FRONTEND_PATH)
+
+
+@app.get("/logo.svg")
+async def serve_logo():
+    path = os.path.join(BASE_DIR, "logo.svg")
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404, detail="logo.svg not found")
+    return FileResponse(path)
+
+
+@app.get("/question_mark.svg")
+async def serve_question_mark():
+    path = os.path.join(BASE_DIR, "question_mark.svg")
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404, detail="question_mark.svg not found")
+    return FileResponse(path)
+
+
+@app.get("/new_customers.csv")
+async def serve_new_customers():
+    if not os.path.exists(DEFAULT_NEW_CUSTOMERS_PATH):
+        raise HTTPException(status_code=404, detail="new_customers.csv not found")
+    return FileResponse(DEFAULT_NEW_CUSTOMERS_PATH)
 
 
 if __name__ == "__main__":

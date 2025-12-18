@@ -23,6 +23,8 @@
             const [isScoring, setIsScoring] = useState(false);
             const [currentStep, setCurrentStep] = useState(0);
             const [apiHealth, setApiHealth] = useState(null);
+            const apiBase = window.API_BASE || (window.location.protocol === 'file:' ? 'http://localhost:8000' : '');
+            const apiUrl = (path) => `${apiBase}${path}`;
 
             useEffect(() => {
                 loadCustomers();
@@ -31,7 +33,7 @@
 
             const checkApiHealth = async () => {
                 try {
-                    const response = await fetch('http://localhost:8000/api/health');
+                    const response = await fetch(apiUrl('/api/health'));
                     const data = await response.json();
                     setApiHealth(data);
                 } catch (error) {
@@ -70,7 +72,7 @@
                 setCurrentStep(0);
 
                 try {
-                    const response = await fetch('http://localhost:8000/api/score-customer', {
+                    const response = await fetch(apiUrl('/api/score-customer'), {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
