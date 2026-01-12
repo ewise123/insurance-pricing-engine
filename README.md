@@ -1,35 +1,33 @@
 # AI-Augmented Dynamic Pricing Engine for Life Insurance
 
-A proof-of-concept system demonstrating AI-driven risk assessment and pricing for life insurance policies with real-time, explainable scoring and **Claude-powered pattern analysis**.
+A proof-of-concept system demonstrating AI-driven risk assessment and pricing for life insurance policies with real-time, explainable scoring, Claude-powered pattern analysis, and AI-informed price recommendations.
 
-## 🎯 Overview
+## Overview
 
 This system processes customer data and generates:
-- **Risk scores** (0-1 scale) based on 12 weighted factors
-- **AI-discovered patterns** using Claude to find complex correlations in historical data  
-- **Price recommendations** with low/high boundaries
-- **Step-by-step explanations** backed by historical data
-- **Real-time visualization** of the scoring process
+- Risk scores (0-1 scale) based on 12 weighted factors
+- AI-discovered patterns using Claude to surface complex correlations in historical data
+- Price recommendations with low/high boundaries plus an AI-influenced recommended price
+- Step-by-step explanations backed by historical data
+- Real-time visualization of the scoring process
 
-**NEW: AI Pattern Analysis** - The system now uses Claude API to discover multi-dimensional patterns that predict outcomes better than simple statistics. For example: "Former smokers aged 55-60 with sedentary lifestyles and borderline cholesterol show 3x higher claim rates in our data (n=127)."
+AI Pattern Analysis: When enabled, the system uses the Claude API to detect multi-dimensional patterns that predict outcomes better than simple statistics. Example: "Former smokers aged 55-60 with sedentary lifestyles and borderline cholesterol show 3x higher claim rates (n=127)."
 
-## 📁 Project Structure
+## Project Structure
 
 ```
-├── backend_api.py              # FastAPI server with scoring engine + AI
-├── ai_pattern_analyzer.py      # Claude API pattern discovery (NEW)
-├── ai_cache.py                 # Caching layer for AI (NEW)
-├── frontend.html               # React UI for real-time scoring
-├── data_generator.py           # Synthetic data generator
-├── demo_script.py              # Command-line demo
-├── .env.example                # Environment template (NEW)
-├── requirements.txt            # Dependencies (includes anthropic SDK)
-├── historical_customers.csv    # 10,000 historical records
-├── new_customers.csv           # 500 new customers to score
-└── sample_scoring_result.json  # Example output
+- backend_api.py              # FastAPI server with scoring engine + AI
+- ai_pattern_analyzer.py      # Claude API pattern discovery
+- ai_cache.py                 # Caching layer for AI
+- frontend.html               # React UI for real-time scoring
+- data_generator.py           # Synthetic data generator
+- .env.example                # Environment template
+- requirements.txt            # Dependencies (includes anthropic SDK)
+- historical_customers.csv    # 10,000 historical records
+- new_customers.csv           # 500 new customers to score
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Step 1: Install Dependencies
 
@@ -48,68 +46,73 @@ cp .env.example .env
 # ENABLE_AI_FEATURES=true
 ```
 
-**Note:** The system works without AI (uses deterministic scoring only). AI adds pattern analysis.
+Note: The system works without AI (deterministic scoring only). AI adds pattern analysis and AI-influenced pricing guidance.
 
-### Step 3: Run the Demo
+### Step 3: Run the Full System
 
-```bash
-python demo_script.py
-```
-
-This will score one customer and show the complete breakdown (with AI if configured).
-
-### Step 4: Run the Full System
-
-**Start the Backend:**
+Start the backend:
 ```bash
 python backend_api.py
 ```
 
-**Open the Frontend:**
-Open `frontend.html` in your web browser. The UI will connect to `http://localhost:8000`
+Open the frontend:
+Open `http://127.0.0.1:8000/` in your browser. The UI will connect to the API and display scoring, AI analysis, and pricing recommendations.
 
-**Features:**
+Features:
 - Select customers from the list
 - Watch real-time scoring (animated)
 - Click any risk factor to see detailed explanation
 - View AI pattern analysis (if enabled)
-- Adjust final pricing as underwriter
-- View executive summary
+- Review AI-influenced price recommendation and adjust final price
+- Read the executive summary
+- Pricing reports persist across refresh using browser localStorage
 
-## 🧠 How It Works
+## How It Works
 
 ### Risk Scoring Model
 
-The engine evaluates **12 risk factors** with weighted contributions:
+The engine evaluates 12 risk factors with weighted contributions:
 
 | Factor | Weight | Description |
 |--------|--------|-------------|
-| **Age** | 20% | Mortality risk increases exponentially with age |
-| **Gender** | 5% | Actuarial differences in mortality rates |
-| **Occupation** | 10% | Workplace hazards and accident risk |
-| **BMI** | 15% | Correlation with cardiovascular disease |
-| **Blood Pressure** | 10% | Hypertension as risk factor |
-| **Cholesterol** | 8% | Atherosclerosis risk indicator |
-| **Smoking Status** | 15% | Single largest modifiable risk factor |
-| **Alcohol** | 5% | Heavy use increases mortality |
-| **Exercise** | 4% | Protective factor (reduces risk) |
-| **Chronic Conditions** | 10% | Pre-existing health issues |
-| **Family History** | 5% | Genetic predisposition |
-| **Dangerous Hobbies** | 3% | High-risk activities |
+| Age | 20% | Mortality risk increases exponentially with age |
+| Gender | 5% | Actuarial differences in mortality rates |
+| Occupation | 10% | Workplace hazards and accident risk |
+| BMI | 15% | Correlation with cardiovascular disease |
+| Blood Pressure | 10% | Hypertension as risk factor |
+| Cholesterol | 8% | Atherosclerosis risk indicator |
+| Smoking Status | 15% | Single largest modifiable risk factor |
+| Alcohol | 5% | Heavy use increases mortality |
+| Exercise | 4% | Protective factor (reduces risk) |
+| Chronic Conditions | 10% | Pre-existing health issues |
+| Family History | 5% | Genetic predisposition |
+| Dangerous Hobbies | 3% | High-risk activities |
 
-**Total = 100%**
+Total = 100%
+
+### AI Pattern Analysis
+
+When enabled, the AI layer compares the applicant to historical cohorts, detects high-signal patterns, and surfaces:
+- Cohort size and claim rate
+- Baseline comparison (vs baseline multiplier)
+- Key contributing factors with sentiment
+- A plain-language recommendation
 
 ### Pricing Algorithm
 
 ```
-Base Rate = Age-dependent rate per $1000 coverage
-Risk Multiplier = 0.5 + (Risk Score × 3)
-Base Premium = Base Rate × Coverage (in thousands) × Risk Multiplier
+Base Rate = age-dependent rate per $1000 coverage
+Risk Multiplier = 0.5 + (Risk Score * 3)
+Base Premium = Base Rate * Coverage (in thousands) * Risk Multiplier
 
-Low Boundary = Base Premium × 0.85  (break-even)
-High Boundary = Base Premium × 1.25  (competitive limit)
-Recommended = Smart positioning based on risk tier
+Low Boundary = Base Premium * 0.85  (break-even)
+High Boundary = Base Premium * 1.25 (competitive limit)
+Recommended = smart positioning based on risk tier
 ```
+
+### AI-Informed Price Recommendation
+
+If AI pattern analysis is enabled, the recommended price is adjusted within the low/high boundary based on pattern risk. The UI displays both the calculated price and the AI-recommended price, and underwriters can override.
 
 ### Risk Tiers
 
@@ -121,15 +124,15 @@ Recommended = Smart positioning based on risk tier
 | 0.50-0.65 | Elevated Risk | Standard rated |
 | 0.65+ | High Risk | Table rated |
 
-## 📊 Data Details
+## Data Details
 
 ### Historical Dataset (10,000 customers)
 - Complete customer profiles
 - Historical risk scores and pricing
 - Policy outcomes (acceptance, claims)
-- Used for comparison and validation
+- Used for AI pattern discovery and comparison metrics
 
-**Key Statistics:**
+Key Statistics:
 - Average risk score: 0.344
 - Average premium: $4,543.88
 - Policy acceptance rate: 74.6%
@@ -138,59 +141,56 @@ Recommended = Smart positioning based on risk tier
 ### New Customers Dataset (500 customers)
 - Fresh customer data for scoring
 - No historical outcomes
-- Ready for live demonstration
+- Ready for live demonstration with optional AI analysis
 
-## 🔬 Technical Details
+## Technical Details
 
 ### Backend (FastAPI)
-- **Language:** Python 3.10+
-- **Framework:** FastAPI
-- **Dependencies:** pandas, numpy, uvicorn
-- **API Endpoints:**
-  - `POST /api/score-customer` - Score single customer
-  - `POST /api/score-batch` - Score CSV batch
-  - `GET /api/health` - Health check
+- Language: Python 3.10+
+- Framework: FastAPI
+- Dependencies: pandas, numpy, uvicorn
+- AI: anthropic SDK, optional AI caching
+- API Endpoints:
+  - POST /api/score-customer - Score single customer
+  - POST /api/score-batch - Score CSV batch
+  - GET /api/health - Health check
 
 ### Frontend (React)
-- **Framework:** React 18 (via CDN)
-- **Styling:** TailwindCSS
-- **Features:**
+- Framework: React 18 (via CDN)
+- Styling: TailwindCSS
+- Features:
   - Real-time scoring animation
   - Expandable factor explanations
-  - Price adjustment interface
+  - AI pattern analysis panel
+  - Price recommendation visualization and override
   - Executive summary view
 
 ### Data Generation
-- **Realistic correlations:** Age ↔ BMI ↔ BP ↔ Cholesterol
-- **Actuarial accuracy:** Based on real mortality tables
-- **Business logic:** Acceptance rates, lapse rates, claims
+- Realistic correlations: Age + BMI + BP + Cholesterol
+- Actuarial accuracy: Based on real mortality tables
+- Business logic: Acceptance rates, lapse rates, claims
 
-## 📈 Example Output
+## Example Output
 
 ```
-EXECUTIVE SUMMARY - Customer NEW-0001
+EXECUTIVE SUMMARY - Customer Avery Jackson
 ======================================================================
 
 RISK ASSESSMENT: Average Risk - Standard
-Final Risk Score: 0.4705
+Final Risk Score: 0.47 (0 = lowest risk, 1 = highest risk)
 
 PRICING RECOMMENDATION:
-  • Recommended Annual Premium: $9,063.38
-  • Price Range: $7,067.77 - $10,393.78
-  • Coverage Amount: $1,450,000
+  - Recommended Annual Premium: $9,063.38
+  - Price Range: $7,067.77 - $10,393.78
+  - Coverage Amount: $1,450,000
 
-CUSTOMER PROFILE:
-  • Age: 57 | Gender: Female | Occupation: Designer
-  • BMI: 28.4 | BP: 125/70
-  • Smoking: Former (<5 years)
-
-TOP RISK FACTORS:
-  1. Age: 57.4 years (+0.0800 to risk score)
-  2. Smoking Status: Former (<5 years) (+0.0750 to risk score)
-  3. Body Mass Index (BMI): 28.4 (Overweight) (+0.0600 to risk score)
+AI PATTERN ANALYSIS (if enabled):
+  - Pattern: Former smokers aged 55-60 with sedentary lifestyles
+  - Cohort size: 127
+  - vs baseline: 3.0x
 ```
 
-## 🎯 Demo Use Cases
+## Demo Use Cases
 
 ### For Insurance Executives
 "This is how AI can reduce underwriting from weeks to seconds while maintaining accuracy."
@@ -201,49 +201,50 @@ TOP RISK FACTORS:
 ### For Product Teams
 "Show how we can scale from 20 underwriters to 1, handling 10x the volume."
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
-**Phase 2 (Production-Ready):**
+Phase 2 (Production-Ready):
 - [ ] Integration with real actuarial tables
 - [ ] Medical records parsing (OCR + NLP)
 - [ ] Regulatory compliance checks
 - [ ] Multi-model ensemble for higher accuracy
 
-**Phase 3 (Advanced Features):**
+Phase 3 (Advanced Features):
 - [ ] Real-time market pricing adjustments
 - [ ] Competitor analysis integration
 - [ ] Predictive lapse modeling
 - [ ] Automated appeals handling
 
-## 📝 Notes for Production
+## Notes for Production
 
-**What's Proven:**
-- ✅ Risk scoring is mathematically sound
-- ✅ Explanations are detailed and traceable
-- ✅ UI/UX shows real-time decision-making
-- ✅ System handles batch processing
+What is proven:
+- Risk scoring is mathematically sound
+- Explanations are detailed and traceable
+- UI/UX shows real-time decision-making
+- System handles batch processing
+- AI pattern analysis augments underwriting insights
 
-**What Needs Real Data:**
-- ⚠️ Historical outcomes for validation
-- ⚠️ Actual mortality tables by state
-- ⚠️ Regulatory compliance rules
-- ⚠️ Competitive pricing data
+What needs real data:
+- Historical outcomes for validation
+- Actual mortality tables by state
+- Regulatory compliance rules
+- Competitive pricing data
 
-## 🤝 Integration Points
+## Integration Points
 
-**Existing Systems:**
+Existing systems:
 - Policy management systems (policy issuance)
 - CRM systems (customer data)
 - Medical records systems (health data)
 - Payment processors (premium collection)
 
-**Data Sources:**
-- Application forms → Customer attributes
-- Medical exams → Health metrics
-- Credit bureaus → Financial indicators
-- MIB Group → Insurance history
+Data sources:
+- Application forms -> customer attributes
+- Medical exams -> health metrics
+- Credit bureaus -> financial indicators
+- MIB Group -> insurance history
 
-## 📞 Support
+## Support
 
 This is a proof-of-concept demonstration system. For production deployment:
 1. Validate with real actuarial team
@@ -253,4 +254,4 @@ This is a proof-of-concept demonstration system. For production deployment:
 
 ---
 
-**Built to demonstrate the future of insurance underwriting** 🚀
+Built to demonstrate the future of insurance underwriting.

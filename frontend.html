@@ -23,6 +23,16 @@
             const [isScoring, setIsScoring] = useState(false);
             const [currentStep, setCurrentStep] = useState(0);
             const [apiHealth, setApiHealth] = useState(null);
+            const reportCacheKey = 'pricingReports.v1';
+            const [reportCache, setReportCache] = useState(() => {
+                try {
+                    const cached = localStorage.getItem(reportCacheKey);
+                    return cached ? JSON.parse(cached) : {};
+                } catch (error) {
+                    console.warn('Failed to load cached reports:', error);
+                    return {};
+                }
+            });
             const apiBase = window.API_BASE || (window.location.protocol === 'file:' ? 'http://localhost:8000' : '');
             const apiUrl = (path) => `${apiBase}${path}`;
 
@@ -30,6 +40,14 @@
                 loadCustomers();
                 checkApiHealth();
             }, []);
+
+            useEffect(() => {
+                try {
+                    localStorage.setItem(reportCacheKey, JSON.stringify(reportCache));
+                } catch (error) {
+                    console.warn('Failed to persist cached reports:', error);
+                }
+            }, [reportCache]);
 
             const checkApiHealth = async () => {
                 try {
@@ -65,11 +83,20 @@
                 }
             };
 
-            const scoreCustomer = async (customer) => {
+            const scoreCustomer = async (customer, options = {}) => {
+                const { force = false } = options;
                 setSelectedCustomer(customer);
                 setScoringResult(null);
                 setIsScoring(true);
                 setCurrentStep(0);
+
+                const cachedReport = reportCache[customer.customer_id];
+                if (!force && cachedReport && cachedReport.result) {
+                    setScoringResult(cachedReport.result);
+                    setIsScoring(false);
+                    setCurrentStep(cachedReport.result.scoring_steps?.length || 0);
+                    return;
+                }
 
                 try {
                     const response = await fetch(apiUrl('/api/score-customer'), {
@@ -112,6 +139,13 @@
                     
                     setScoringResult(result);
                     setIsScoring(false);
+                    setReportCache((prev) => ({
+                        ...prev,
+                        [customer.customer_id]: {
+                            result,
+                            savedAt: new Date().toISOString()
+                        }
+                    }));
                 } catch (error) {
                     console.error('Error scoring customer:', error);
                     setIsScoring(false);
@@ -194,7 +228,11 @@
                                 ) : (
                                     <div className="space-y-6">
                                         {/* Customer Header */}
-                                        <CustomerHeader customer={selectedCustomer} />
+                                        <CustomerHeader
+                                            customer={selectedCustomer}
+                                            isScoring={isScoring}
+                                            onRecalculate={() => scoreCustomer(selectedCustomer, { force: true })}
+                                        />
 
                                         {/* Scoring Progress */}
                                         {(isScoring || scoringResult) && (
@@ -214,7 +252,7 @@
         }
 
         // Customer Header Component
-        function CustomerHeader({ customer }) {
+        function CustomerHeader({ customer, isScoring, onRecalculate }) {
             return (
                 <div className="bg-white rounded-lg shadow p-6">
                     <div className="flex justify-between items-start">
@@ -244,6 +282,18 @@
                             <div className="text-2xl font-bold text-blue-600">
                                 ${parseInt(customer.coverage_amount_requested).toLocaleString()}
                             </div>
+                            <button
+                                type="button"
+                                onClick={onRecalculate}
+                                disabled={isScoring}
+                                className={`mt-3 inline-flex items-center justify-center px-3 py-1.5 text-xs font-semibold rounded-full border ${
+                                    isScoring
+                                        ? 'border-gray-200 text-gray-400 bg-gray-50 cursor-not-allowed'
+                                        : 'border-blue-200 text-blue-700 bg-blue-50 hover:bg-blue-100'
+                                }`}
+                            >
+                                Recalculate
+                            </button>
                         </div>
                     </div>
                 </div>
