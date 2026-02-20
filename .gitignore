@@ -16,9 +16,10 @@ venv/
 ENV/
 env/
 
-# IDE
+# IDE / Tool config
 .vscode/
 .idea/
+.serena/
 *.swp
 *.swo
 *~
